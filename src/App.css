@@ -197,4 +197,34 @@
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+  /* Dans App.css */
+.App {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* Espace pour la navigation sticky */
+.main-content {
+  margin-top: 30px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Sur mobile, ajuster l'espacement */
+@media (max-width: 768px) {
+  .App {
+    padding: 10px;
+  }
+  
+  .main-content {
+    margin-top: 20px;
+  }
+  
+  /* Pour s'assurer que la navigation n'est pas cachée */
+  .navbar {
+    position: sticky;
+    top: 10px;
+  }
+}
 }
