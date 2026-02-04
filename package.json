@@ -59,7 +59,7 @@
     "postcss": "^8.4.31"
   },
   "engines": {
-    "node": ">=16.0.0",
+    "node": "18.x",
     "npm": ">=8.0.0"
   },
   "keywords": [
@@ -75,10 +75,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/votre-username/portfolio-formation-ia.git"
+    "url": "https://github.com/Hmoham404/portfolio-formation-ia.git"
   },
   "bugs": {
-    "url": "https://github.com/votre-username/portfolio-formation-ia/issues"
+    "url": "https://github.com/Hmoham404/portfolio-formation-ia/issues"
   },
   "description": "Portfolio professionnel pour formations en IA et automatisation - Expert Mohamed Lakhal",
   "main": "src/index.js",
