@@ -1,172 +1,331 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './CodeSamples.css';
 
 const CodeSamples = () => {
-  const [activeTab, setActiveTab] = useState('make');
+  const [activeTab, setActiveTab] = useState('email-agent');
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef(null);
 
-  const codeExamples = {
-    make: {
-      title: "Make.com - Workflow d'Automatisation",
-      description: "Exemple d'intégration IA avec outils métiers",
-      code: `// Scénario : Automatisation du traitement des leads
-1. Trigger : Nouvel email reçu dans Gmail
-2. Action : ChatGPT analyse le contenu
-3. Condition : Si c'est une demande commerciale
-4. Action : Créer une fiche dans Google Sheets
-5. Action : Envoyer une réponse automatique personnalisée
-6. Action : Notifier sur Slack l'équipe commerciale
-
-// Résultat : Gain de temps : 2h/jour
-// ROI : 300% en 1 mois`
+  const tabContent = {
+    'email-agent': {
+      title: "🎯 Démo : Agent IA pour Emails",
+      description: "Voyez comment l'IA traite et répond automatiquement à vos emails",
+      hasVideo: true,
+      videoFile: "v1.mp4",
+      duration: "2:30",
+      steps: [
+        "Configuration de l'agent IA dans n8n",
+        "Connexion à votre compte email",
+        "Définition des règles de traitement",
+        "Test avec des emails réels",
+        "Déploiement en production"
+      ],
+      benefits: [
+        "Traitement automatique 24/7",
+        "Réponses personnalisées",
+        "Tri intelligent des priorités",
+        "Gain de temps significatif"
+      ],
+      technologies: ["n8n", "OpenAI GPT-4", "Gmail API", "JavaScript", "Webhooks"]
     },
-    zapier: {
-      title: "Zapier - Connexion CRM & IA",
-      description: "Automatisation entre HubSpot et OpenAI",
-      code: `// ZAP : Qualification automatique des leads
-1. Événement : Nouveau contact dans HubSpot
-2. Action : Envoyer les infos à GPT-4
-3. Logique : Analyser le potentiel commercial
-4. Action : Mettre à jour le score de lead
-5. Action : Assigner au bon commercial
-6. Action : Programmer un suivi automatique
-
-// Avantage : Lead response time < 5min`
+    'crm-automation': {
+      title: "🤖 Automatisation CRM",
+      description: "Workflow complet de qualification des leads sans codage",
+      hasVideo: false,
+      duration: "Configuration : 1 heure",
+      steps: [
+        "Capture automatique des leads depuis votre site web",
+        "Analyse et scoring par IA en temps réel",
+        "Intégration avec votre CRM (HubSpot, Salesforce, etc.)",
+        "Notifications automatiques à l'équipe commerciale",
+        "Suivi et reporting automatisés"
+      ],
+      benefits: [
+        "Réponse immédiate aux leads (< 5 minutes)",
+        "Qualification précise grâce à l'IA",
+        "Élimination des doublons automatique",
+        "Augmentation du taux de conversion",
+        "ROI mesurable dès le premier mois"
+      ],
+      technologies: ["Make.com", "Zapier", "HubSpot API", "ChatGPT", "Slack"]
     },
-    prompt: {
-      title: "Prompt Engineering Avancé",
-      description: "Template pour résultats professionnels",
-      code: `// SYSTEM PROMPT (Rôle)
-"Tu es un expert en analyse commerciale avec 15 ans d'expérience."
-
-// CONTEXT PROMPT (Contexte)
-"Je suis directeur d'une PME dans le secteur textile.
-J'ai besoin d'analyser ce rapport de vente..."
-
-// FORMAT PROMPT (Format attendu)
-"Fournis une analyse structurée en :
-1. Points forts (bullet points)
-2. Risques identifiés
-3. Recommandations actionnables
-4. KPIs à suivre"
-
-// TONE PROMPT (Ton)
-"Ton professionnel, concis, orienté décision.
-Utilise un vocabulaire business."
-  
-// EXEMPLES (Few-shot learning)
-"Exemple de bonne analyse : [exemple]
-Exemple à éviter : [exemple]"`
-    },
-    api: {
-      title: "API Integration - Node.js",
-      description: "Exemple d'appel API OpenAI",
-      code: `const OpenAI = require('openai');
-const openai = new OpenAI({ apiKey: process.env.OPENAI_KEY });
-
-async function analyzeBusinessDocument(text) {
-  const completion = await openai.chat.completions.create({
-    model: "gpt-4-turbo-preview",
-    messages: [
-      {
-        role: "system",
-        content: "Expert en analyse de documents business"
-      },
-      {
-        role: "user",
-        content: \`Analyse ce contrat : \${text}\`
-      }
-    ],
-    temperature: 0.3,
-    max_tokens: 1500
-  });
-  
-  return completion.choices[0].message;
-}
-
-// Usage : Extraction d'informations clés
-// Avantage : Analyse de 50 pages en 30 secondes`
+    'data-analysis': {
+      title: "📊 Analyse de Données IA",
+      description: "Transformez vos données brutes en insights actionnables",
+      hasVideo: false,
+      duration: "Setup : 45 minutes",
+      steps: [
+        "Import automatique des données (Excel, CSV, Google Sheets)",
+        "Nettoyage et préparation par IA",
+        "Analyse prédictive et détection d'anomalies",
+        "Visualisation interactive des résultats",
+        "Génération automatique de rapports"
+      ],
+      benefits: [
+        "Analyse de données en quelques secondes",
+        "Détection automatique des tendances",
+        "Prédictions précises avec machine learning",
+        "Alertes sur anomalies détectées",
+        "Décisions éclairées basées sur les données"
+      ],
+      technologies: ["Python", "OpenAI API", "Google Sheets", "Tableau", "Power BI"]
     }
   };
 
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+    setIsPlaying(false);
+    if (videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+    }
+  };
+
+  const handlePlayPause = () => {
+    if (videoRef.current) {
+      if (videoRef.current.paused) {
+        videoRef.current.play();
+        setIsPlaying(true);
+      } else {
+        videoRef.current.pause();
+        setIsPlaying(false);
+      }
+    }
+  };
+
+  const handleRestart = () => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0;
+      videoRef.current.play();
+      setIsPlaying(true);
+    }
+  };
+
+  const currentContent = tabContent[activeTab];
+
   return (
     <section className="code-samples">
-      <h2 className="section-title">💻 Exemples de Code & Workflows</h2>
+      <h2 className="section-title">🎥 Démonstrations & Solutions</h2>
       <p className="section-subtitle">
-        Démonstration des solutions que vous apprendrez à créer
+        Découvrez nos solutions d'automatisation IA pour votre entreprise
       </p>
       
+      {/* Navigation */}
       <div className="tabs">
-        {Object.keys(codeExamples).map(tab => (
+        {Object.keys(tabContent).map(tab => (
           <button
             key={tab}
             className={`tab-btn ${activeTab === tab ? 'active' : ''}`}
-            onClick={() => setActiveTab(tab)}
+            onClick={() => handleTabChange(tab)}
           >
-            {tab === 'make' && '🔧 Make.com'}
-            {tab === 'zapier' && '⚡ Zapier'}
-            {tab === 'prompt' && '🎯 Prompts'}
-            {tab === 'api' && '🔌 API'}
+            {tab === 'email-agent' && '📧 Agent Email'}
+            {tab === 'crm-automation' && '🤖 CRM Automatisé'}
+            {tab === 'data-analysis' && '📊 Analyse IA'}
           </button>
         ))}
       </div>
       
-      <div className="code-container">
-        <div className="code-header">
-          <h3>{codeExamples[activeTab].title}</h3>
-          <p>{codeExamples[activeTab].description}</p>
+      {/* Conteneur principal */}
+      <div className="solution-container">
+        <div className="solution-header">
+          <div className="solution-title-section">
+            <h3>{currentContent.title}</h3>
+            <p className="solution-description">{currentContent.description}</p>
+            <div className="solution-meta">
+              <span className="meta-item">⏱️ {currentContent.duration}</span>
+              <span className="meta-item">🚀 Solution Clé en Main</span>
+              <span className="meta-item">🎯 Résultats Garantis</span>
+            </div>
+          </div>
         </div>
         
-        <pre className="code-block">
-          <code>{codeExamples[activeTab].code}</code>
-        </pre>
+        {/* Section vidéo uniquement pour l'onglet email-agent */}
+        {currentContent.hasVideo ? (
+          <div className="video-section">
+            <div className="video-player-section">
+              <div className="video-wrapper">
+                <video
+                  ref={videoRef}
+                  controls
+                  className="local-video-player"
+                  poster="/video-poster.jpg"
+                  onEnded={() => setIsPlaying(false)}
+                >
+                  <source 
+                    src={`/${currentContent.videoFile}`} 
+                    type="video/mp4" 
+                  />
+                  Votre navigateur ne supporte pas la lecture de vidéos.
+                </video>
+              </div>
+              
+              <div className="custom-controls">
+                <button 
+                  onClick={handlePlayPause} 
+                  className="control-btn play-btn"
+                >
+                  {isPlaying ? '⏸️ Pause' : '▶️ Lecture'}
+                </button>
+                <button 
+                  onClick={handleRestart} 
+                  className="control-btn restart-btn"
+                >
+                  🔄 Redémarrer
+                </button>
+                <div className="video-info">
+                  <span className="video-title">
+                    Démonstration en direct
+                  </span>
+                  <span className="video-source">
+                    Tutoriel pas à pas
+                  </span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="video-side-info">
+              <h4>🎯 Ce que vous verrez :</h4>
+              <ul className="video-highlights">
+                <li>Interface n8n en action</li>
+                <li>Configuration des workflows</li>
+                <li>Intégration OpenAI</li>
+                <li>Tests réels avec emails</li>
+              </ul>
+            </div>
+          </div>
+        ) : (
+          <div className="solution-presentation">
+            <div className="solution-icon">
+              {activeTab === 'crm-automation' ? '🤖' : '📊'}
+            </div>
+            <h4>✨ Solution Professionnelle</h4>
+            <p className="presentation-text">
+              {activeTab === 'crm-automation' 
+                ? "Notre solution d'automatisation CRM combine les meilleures plateformes no-code avec l'intelligence artificielle pour transformer votre processus de vente. Sans aucune ligne de code, vous pouvez automatiser la qualification, le suivi et la conversion de vos leads."
+                : "Notre plateforme d'analyse de données utilise l'IA avancée pour transformer vos données brutes en insights actionnables. Obtenez des analyses prédictives, des visualisations interactives et des rapports automatisés sans compétences techniques."
+              }
+            </p>
+          </div>
+        )}
         
-        <div className="code-benefits">
-          <h4>✅ Bénéfices Business</h4>
-          <ul>
-            {activeTab === 'make' && (
+        {/* Informations communes à tous les onglets */}
+        <div className="solution-details">
+          <div className="details-column">
+            <h4>📋 Processus étape par étape :</h4>
+            <ul className="process-list">
+              {currentContent.steps.map((step, index) => (
+                <li key={index} className="process-item">
+                  <span className="step-number">{index + 1}</span>
+                  <span className="step-text">{step}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          <div className="details-column">
+            <h4>✅ Avantages concrets :</h4>
+            <div className="benefits-grid">
+              {currentContent.benefits.map((benefit, index) => (
+                <div key={index} className="benefit-card">
+                  <span className="benefit-icon">✓</span>
+                  <span className="benefit-content">{benefit}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        
+        {/* Technologies */}
+        <div className="technologies-section">
+          <h4>🛠️ Technologies utilisées :</h4>
+          <div className="tech-tags">
+            {currentContent.technologies.map((tech, index) => (
+              <span key={index} className="tech-tag">{tech}</span>
+            ))}
+          </div>
+        </div>
+        
+        {/* ROI et Statistiques */}
+        <div className="roi-section">
+          <h4>📈 Impact et ROI :</h4>
+          <div className="roi-grid">
+            {activeTab === 'email-agent' && (
               <>
-                <li>Automatisation des tâches manuelles</li>
-                <li>Réduction des erreurs humaines</li>
-                <li>Gain de temps significatif</li>
+                <div className="roi-item">
+                  <div className="roi-value">48%</div>
+                  <div className="roi-label">Temps gagné sur emails</div>
+                </div>
+                <div className="roi-item">
+                  <div className="roi-value">24/7</div>
+                  <div className="roi-label">Disponibilité</div>
+                </div>
+                <div className="roi-item">
+                  <div className="roi-value">1h/jour</div>
+                  <div className="roi-label">Économisé par employé</div>
+                </div>
+                <div className="roi-item">
+                  <div className="roi-value">98%</div>
+                  <div className="roi-label">Précision des réponses</div>
+                </div>
               </>
             )}
-            {activeTab === 'zapier' && (
+            {activeTab === 'crm-automation' && (
               <>
-                <li>Connectivité entre 5000+ apps</li>
-                <li>Pas de compétences coding requises</li>
-                <li>Scalabilité immédiate</li>
+                <div className="roi-item">
+                  <div className="roi-value">5 min</div>
+                  <div className="roi-label">Temps de réponse aux leads</div>
+                </div>
+                <div className="roi-item">
+                  <div className="roi-value">35%</div>
+                  <div className="roi-label">Conversion augmentée</div>
+                </div>
+                <div className="roi-item">
+                  <div className="roi-value">3x</div>
+                  <div className="roi-label">Productivité équipe vente</div>
+                </div>
+                <div className="roi-item">
+                  <div className="roi-value">90%</div>
+                  <div className="roi-label">Réduction erreurs manuelles</div>
+                </div>
               </>
             )}
-            {activeTab === 'prompt' && (
+            {activeTab === 'data-analysis' && (
               <>
-                <li>Résultats professionnels cohérents</li>
-                <li>Réduction des hallucinations IA</li>
-                <li>Personnalisation pour votre secteur</li>
+                <div className="roi-item">
+                  <div className="roi-value">95%</div>
+                  <div className="roi-label">Temps d'analyse réduit</div>
+                </div>
+                <div className="roi-item">
+                  <div className="roi-value">30%</div>
+                  <div className="roi-label">Décisions améliorées</div>
+                </div>
+                <div className="roi-item">
+                  <div className="roi-value">99%</div>
+                  <div className="roi-label">Précision des prédictions</div>
+                </div>
+                <div className="roi-item">
+                  <div className="roi-value">2x</div>
+                  <div className="roi-label">ROI en 6 mois</div>
+                </div>
               </>
             )}
-            {activeTab === 'api' && (
-              <>
-                <li>Intégration personnalisée</li>
-                <li>Contrôle total des workflows</li>
-                <li>Meilleure sécurité des données</li>
-              </>
-            )}
-          </ul>
+          </div>
         </div>
       </div>
       
-      <div className="tools-showcase">
-        <h3>🛠️ Stack Technique Maîtrisée</h3>
-        <div className="tools-grid">
-          <div className="tool">OpenAI GPT-4</div>
-          <div className="tool">Google Gemini Pro</div>
-          <div className="tool">Anthropic Claude</div>
-          <div className="tool">Make.com</div>
-          <div className="tool">Zapier</div>
-          <div className="tool">n8n</div>
-          <div className="tool">Google Apps Script</div>
-          <div className="tool">Power Automate</div>
+      {/* CTA */}
+      <div className="solution-cta">
+        <div className="cta-content">
+          <h4>🚀 Prêt à transformer votre entreprise ?</h4>
+          <p>
+            Nous vous accompagnons dans l'implémentation de cette solution, 
+            avec formation, support et garantie de résultats.
+          </p>
         </div>
+        <button className="cta-button">
+          Demander une démonstration personnalisée
+          <span className="cta-arrow">→</span>
+        </button>
       </div>
     </section>
   );
