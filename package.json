@@ -18,24 +18,69 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint src/**/*.{js,jsx}",
+    "format": "prettier --write src/**/*.{js,jsx,css,json}",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "analyze": "source-map-explorer 'build/static/js/*.js'"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "no-unused-vars": "warn",
+      "react/prop-types": "off"
+    }
   },
   "browserslist": {
     "production": [
       ">0.2%",
       "not dead",
-      "not op_mini all"
+      "not op_mini all",
+      "not ie > 0",
+      "not samsung 4",
+      "not and_uc 12.12"
     ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "eslint-plugin-prettier": "^5.0.1",
+    "prettier": "^3.0.3",
+    "gh-pages": "^6.0.0",
+    "source-map-explorer": "^2.5.3",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "keywords": [
+    "portfolio",
+    "formation",
+    "ia",
+    "intelligence-artificielle",
+    "react",
+    "formation-ia",
+    "automatisation"
+  ],
+  "author": "Mohamed Lakhal",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/votre-username/portfolio-formation-ia.git"
+  },
+  "bugs": {
+    "url": "https://github.com/votre-username/portfolio-formation-ia/issues"
+  },
+  "description": "Portfolio professionnel pour formations en IA et automatisation - Expert Mohamed Lakhal",
+  "main": "src/index.js",
+  "proxy": "http://localhost:5000"
 }
