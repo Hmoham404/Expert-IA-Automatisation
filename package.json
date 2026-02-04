@@ -4,45 +4,39 @@
   "private": true,
   "homepage": ".",
   "dependencies": {
-    "@emailjs/browser": "^3.12.1",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
+    "@emailjs/browser": "^4.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.12.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "react-icons": "^5.2.1",
+    "web-vitals": "^3.5.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^14.2.1",
+    "@testing-library/user-event": "^14.5.2",
+    "react-scripts": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint src/**/*.{js,jsx}",
-    "format": "prettier --write src/**/*.{js,jsx,css,json}",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "build:clean": "npm run clean && react-scripts build",
+    "clean": "rm -rf node_modules/.cache build",
     "analyze": "source-map-explorer 'build/static/js/*.js'"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
-    ],
-    "rules": {
-      "no-unused-vars": "warn",
-      "react/prop-types": "off"
-    }
+    ]
   },
   "browserslist": {
     "production": [
       ">0.2%",
       "not dead",
       "not op_mini all",
-      "not ie > 0",
-      "not samsung 4",
-      "not and_uc 12.12"
+      "not ie > 0"
     ],
     "development": [
       "last 1 chrome version",
@@ -50,38 +44,9 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "eslint-plugin-prettier": "^5.0.1",
-    "prettier": "^3.0.3",
-    "gh-pages": "^6.0.0",
-    "source-map-explorer": "^2.5.3",
-    "autoprefixer": "^10.4.16",
-    "postcss": "^8.4.31"
-  },
-  "engines": {
-  "node": "24.x",
-  "npm": ">=8.0.0"
-}
-,
-  "keywords": [
-    "portfolio",
-    "formation",
-    "ia",
-    "intelligence-artificielle",
-    "react",
-    "formation-ia",
-    "automatisation"
-  ],
-  "author": "Mohamed Lakhal",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Hmoham404/portfolio-formation-ia.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Hmoham404/portfolio-formation-ia/issues"
-  },
-  "description": "Portfolio professionnel pour formations en IA et automatisation - Expert Mohamed Lakhal",
-  "main": "src/index.js",
-  "proxy": "http://localhost:5000"
+  "resolutions": {
+    "webpack": "^5.88.0",
+    "babel-loader": "^9.1.2",
+    "eslint": "^9.0.0"
+  }
 }
