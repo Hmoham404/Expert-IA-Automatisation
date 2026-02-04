@@ -59,9 +59,10 @@
     "postcss": "^8.4.31"
   },
   "engines": {
-    "node": "18.x",
-    "npm": ">=8.0.0"
-  },
+  "node": "18.x",
+  "npm": ">=8.0.0"
+}
+,
   "keywords": [
     "portfolio",
     "formation",
