@@ -27,7 +27,6 @@ const Navigation = ({ activeSection, setActiveSection, sections }) => {
   }, []);
 
   useEffect(() => {
-    // Close mobile menu when window resizes to desktop
     const handleResize = () => {
       if (window.innerWidth > 1024 && mobileMenuOpen) {
         setMobileMenuOpen(false);
@@ -51,25 +50,56 @@ const Navigation = ({ activeSection, setActiveSection, sections }) => {
     }
   };
 
-  const handleNavClick = (sectionId) => {
+  const handleNavClick = (sectionId, e) => {
+    // Empêcher le comportement par défaut si c'est un événement
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    
     setActiveSection(sectionId);
     setMobileMenuOpen(false);
+    
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      element.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start',
+        inline: 'nearest'
+      });
+    }
+    
+    // Mettre à jour l'URL sans recharger la page
+    if (window.history && window.history.pushState) {
+      const newUrl = `${window.location.pathname}#${sectionId}`;
+      window.history.pushState({ section: sectionId }, '', newUrl);
     }
   };
 
-  const handleWhatsAppClick = () => {
+  const handleWhatsAppClick = (e) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    
     const phoneNumber = "+21623513870";
     const message = "Bonjour, je suis intéressé(e) par la formation IA & Automatisation. Je souhaite réserver ma place. Pouvez-vous m'envoyer plus d'informations ?";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
-  const handleLogoClick = () => {
+  const handleLogoClick = (e) => {
+    // Empêcher le comportement par défaut
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setActiveSection('home');
+    
+    // Mettre à jour l'URL
+    window.history.pushState({}, '', window.location.pathname);
   };
 
   return (
@@ -78,7 +108,11 @@ const Navigation = ({ activeSection, setActiveSection, sections }) => {
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="nav-container">
           {/* Logo */}
-          <div className="nav-brand" onClick={handleLogoClick}>
+          <button 
+            className="nav-brand" 
+            onClick={handleLogoClick}
+            style={{ background: 'none', border: 'none', cursor: 'pointer' }}
+          >
             <div className="brand-logo">
               <div className="logo-icon">
                 <span>🤖</span>
@@ -88,7 +122,7 @@ const Navigation = ({ activeSection, setActiveSection, sections }) => {
                 <p className="logo-subtitle">Expertise • Innovation • Excellence</p>
               </div>
             </div>
-          </div>
+          </button>
 
           {/* Desktop Navigation Menu */}
           <div className="nav-desktop">
@@ -97,9 +131,10 @@ const Navigation = ({ activeSection, setActiveSection, sections }) => {
                 <button
                   key={section.id}
                   className={`nav-item ${activeSection === section.id ? 'active' : ''}`}
-                  onClick={() => handleNavClick(section.id)}
+                  onClick={(e) => handleNavClick(section.id, e)}
                   aria-label={`Aller à ${section.label}`}
                   title={section.label}
+                  style={{ background: 'none', border: 'none', cursor: 'pointer' }}
                 >
                   <span className="nav-icon">{getIcon(section.id)}</span>
                   <span className="nav-label">{section.label}</span>
@@ -114,6 +149,7 @@ const Navigation = ({ activeSection, setActiveSection, sections }) => {
             <button 
               className="nav-cta"
               onClick={handleWhatsAppClick}
+              style={{ cursor: 'pointer' }}
             >
               <FaWhatsapp className="cta-icon" />
               <span className="cta-text">Réserver</span>
@@ -125,6 +161,7 @@ const Navigation = ({ activeSection, setActiveSection, sections }) => {
             className="mobile-toggle"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+            style={{ background: 'none', border: 'none', cursor: 'pointer' }}
           >
             {mobileMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
@@ -134,17 +171,22 @@ const Navigation = ({ activeSection, setActiveSection, sections }) => {
         <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
           <div className="mobile-menu-content">
             <div className="mobile-menu-header">
-              <div className="mobile-logo" onClick={handleLogoClick}>
+              <button 
+                className="mobile-logo" 
+                onClick={handleLogoClick}
+                style={{ background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', width: '100%' }}
+              >
                 <div className="mobile-logo-icon">🤖</div>
                 <div className="mobile-logo-text">
                   <h3>IA Formation</h3>
                   <p>Formation Expert IA</p>
                 </div>
-              </div>
+              </button>
               <button 
                 className="mobile-close"
                 onClick={() => setMobileMenuOpen(false)}
                 aria-label="Fermer le menu"
+                style={{ background: 'none', border: 'none', cursor: 'pointer' }}
               >
                 <FaTimes />
               </button>
@@ -155,7 +197,8 @@ const Navigation = ({ activeSection, setActiveSection, sections }) => {
                 <button
                   key={section.id}
                   className={`mobile-nav-item ${activeSection === section.id ? 'active' : ''}`}
-                  onClick={() => handleNavClick(section.id)}
+                  onClick={(e) => handleNavClick(section.id, e)}
+                  style={{ background: 'none', border: 'none', cursor: 'pointer', width: '100%' }}
                 >
                   <span className="mobile-nav-icon">{getIcon(section.id)}</span>
                   <span className="mobile-nav-label">{section.label}</span>
@@ -169,6 +212,7 @@ const Navigation = ({ activeSection, setActiveSection, sections }) => {
               <button 
                 className="mobile-nav-item mobile-cta"
                 onClick={handleWhatsAppClick}
+                style={{ background: 'none', border: 'none', cursor: 'pointer', width: '100%' }}
               >
                 <FaWhatsapp className="mobile-nav-icon" />
                 <span className="mobile-nav-label">Réserver via WhatsApp</span>
@@ -202,6 +246,7 @@ const Navigation = ({ activeSection, setActiveSection, sections }) => {
         className="whatsapp-fixed"
         onClick={handleWhatsAppClick}
         aria-label="Contacter sur WhatsApp"
+        style={{ background: 'none', border: 'none', cursor: 'pointer' }}
       >
         <FaWhatsapp className="whatsapp-icon" />
         <span className="whatsapp-text">WhatsApp</span>
