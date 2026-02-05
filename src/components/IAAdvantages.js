@@ -1,127 +1,196 @@
 import React, { useState } from 'react';
+import { 
+  FaClock, 
+  FaMoneyBillWave, 
+  FaPuzzlePiece, 
+  FaChartBar, 
+  FaTrophy,
+  FaBolt,
+  FaBrain,
+  FaRobot,
+  FaCheckCircle,
+  FaWhatsapp,
+  FaPhone,
+  FaCalendarAlt,
+  FaUsers,
+  FaChartLine,
+  FaArrowRight,
+  FaCaretDown,
+  FaCaretUp,
+  FaFileAlt,
+  FaBuilding
+} from 'react-icons/fa';
 import './IAAdvantages.css';
 
 const IAAdvantages = () => {
   const [showContactOptions, setShowContactOptions] = useState(false);
+  const [activeAdvantage, setActiveAdvantage] = useState(null);
 
   const advantages = [
     {
-      icon: "⏱️",
+      id: 1,
+      icon: <FaClock />,
       title: "Gain de temps radical",
       description: "Automatisez jusqu'à 48% de vos tâches répétitives",
+      color: "#3B82F6",
+      gradient: "linear-gradient(135deg, #3B82F6, #60A5FA)",
+      stats: {
+        percentage: "48%",
+        label: "Temps gagné"
+      },
       keyPoints: [
         {
           title: "Intelligence des flux",
-          desc: "Automatisation complète des processus métier"
+          description: "Automatisation complète des processus métier",
+          icon: "🔄"
         },
         {
           title: "Reporting instantané",
-          desc: "Données disponibles en temps réel"
+          description: "Données disponibles en temps réel",
+          icon: "📊"
         },
         {
           title: "Synchronisation intelligente",
-          desc: "Des données entre outils et services"
+          description: "Des données entre outils et services",
+          icon: "🔗"
         }
       ],
-      result: "Jusqu'à 48% de temps gagné sur les tâches répétitives",
-      percentage: "48%",
-      color: "#3498db"
+      outcome: "Jusqu'à 48% de temps gagné sur les tâches répétitives"
     },
     {
-      icon: "💰",
+      id: 2,
+      icon: <FaMoneyBillWave />,
       title: "ROI immédiat et mesurable",
       description: "Retour sur investissement dès le premier mois",
+      color: "#10B981",
+      gradient: "linear-gradient(135deg, #10B981, #34D399)",
+      stats: {
+        percentage: "1 mois",
+        label: "ROI"
+      },
       keyPoints: [
         {
           title: "Optimisation logicielle",
-          desc: "Moins d'outils, plus d'efficacité"
+          description: "Moins d'outils, plus d'efficacité",
+          icon: "🛠️"
         },
         {
           title: "Valorisation du capital humain",
-          desc: "Les équipes se concentrent sur les tâches à forte valeur"
+          description: "Les équipes se concentrent sur les tâches à forte valeur",
+          icon: "👥"
         },
         {
-          title: "Zéro hallucination",
-          desc: "Agents IA contrôlés, fiables et vérifiables"
+          title: "Agents IA contrôlés",
+          description: "Fiables et vérifiables",
+          icon: "✅"
         }
       ],
-      result: "Retour sur investissement dès le premier mois",
-      percentage: "1 mois",
-      color: "#27ae60"
+      outcome: "Retour sur investissement dès le premier mois"
     },
     {
-      icon: "🧩",
+      id: 3,
+      icon: <FaPuzzlePiece />,
       title: "Innovation accessible à tous",
       description: "L'IA devient simple, utilisable et maîtrisée",
+      color: "#8B5CF6",
+      gradient: "linear-gradient(135deg, #8B5CF6, #A78BFA)",
+      stats: {
+        percentage: "0 code",
+        label: "No-Code"
+      },
       keyPoints: [
         {
           title: "Architecture No-Code",
-          desc: "Aucune compétence technique requise"
+          description: "Aucune compétence technique requise",
+          icon: "🚫💻"
         },
         {
           title: "Bibliothèque d'agents IA métier",
-          desc: "RH, Finance, Marketing, Qualité…"
+          description: "RH, Finance, Marketing, Qualité…",
+          icon: "📚"
         },
         {
           title: "Accompagnement expert",
-          desc: "Avant, pendant et après la formation"
+          description: "Avant, pendant et après la formation",
+          icon: "👨‍🏫"
         }
       ],
-      result: "L'IA devient simple, utilisable et maîtrisée",
-      percentage: "0 code",
-      color: "#9b59b6"
+      outcome: "L'IA devient simple, utilisable et maîtrisée"
     },
     {
-      icon: "📊",
+      id: 4,
+      icon: <FaChartBar />,
       title: "Décision éclairée et stratégique",
       description: "Des décisions rapides, fiables et justifiées",
+      color: "#F59E0B",
+      gradient: "linear-gradient(135deg, #F59E0B, #FBBF24)",
+      stats: {
+        percentage: "100% data",
+        label: "Data-Driven"
+      },
       keyPoints: [
         {
           title: "Analyses prédictives",
-          desc: "Basées sur les données réelles de l'entreprise"
+          description: "Basées sur les données réelles de l'entreprise",
+          icon: "🔮"
         },
         {
           title: "Aide à la décision par IA",
-          desc: "Scénarios, risques, opportunités"
+          description: "Scénarios, risques, opportunités",
+          icon: "🎯"
         },
         {
           title: "Smart Dashboards",
-          desc: "Clairs et personnalisés"
+          description: "Clairs et personnalisés",
+          icon: "📈"
         }
       ],
-      result: "Des décisions rapides, fiables et justifiées",
-      percentage: "100% data",
-      color: "#e74c3c"
+      outcome: "Des décisions rapides, fiables et justifiées"
     },
     {
-      icon: "🏆",
+      id: 5,
+      icon: <FaTrophy />,
       title: "Avantage concurrentiel durable",
       description: "L'entreprise prend une longueur d'avance sur son marché",
+      color: "#EF4444",
+      gradient: "linear-gradient(135deg, #EF4444, #F87171)",
+      stats: {
+        percentage: "Leader",
+        label: "Position"
+      },
       keyPoints: [
         {
           title: "Barrière technologique",
-          desc: "Difficile à copier"
+          description: "Difficile à copier",
+          icon: "🛡️"
         },
         {
           title: "Expérience client auto-responsive",
-          desc: "Réponses rapides, personnalisées, 24/7"
+          description: "Réponses rapides, personnalisées, 24/7",
+          icon: "⚡"
         },
         {
           title: "Culture de l'agilité",
-          desc: "Et de l'innovation continue"
+          description: "Et de l'innovation continue",
+          icon: "🚀"
         }
       ],
-      result: "L'entreprise prend une longueur d'avance sur son marché",
-      percentage: "Leader",
-      color: "#f39c12"
+      outcome: "L'entreprise prend une longueur d'avance sur son marché"
     }
   ];
 
   const finalResults = [
-    { icon: "⚡", text: "Entreprise plus rapide" },
-    { icon: "💰", text: "Plus rentable" },
-    { icon: "🧠", text: "Plus intelligente" },
-    { icon: "🤖", text: "Plus autonome technologiquement" }
+    { icon: <FaBolt />, title: "Entreprise plus rapide", description: "Processus optimisés" },
+    { icon: <FaMoneyBillWave />, title: "Plus rentable", description: "ROI amélioré" },
+    { icon: <FaBrain />, title: "Plus intelligente", description: "Décisions data-driven" },
+    { icon: <FaRobot />, title: "Plus autonome", description: "Technologiquement indépendante" }
+  ];
+
+  const impactStats = [
+    { value: "48%", label: "Temps gagné", description: "Sur tâches répétitives", icon: <FaClock /> },
+    { value: "1 mois", label: "ROI", description: "Dès le premier mois", icon: <FaMoneyBillWave /> },
+    { value: "100%", label: "Autonomie", description: "Participants opérationnels", icon: <FaUsers /> },
+    { value: "3x", label: "Productivité", description: "Augmentée en moyenne", icon: <FaChartLine /> }
   ];
 
   const handleWhatsAppClick = (messageType = 'default') => {
@@ -132,7 +201,7 @@ const IAAdvantages = () => {
       info: "Bonjour, je souhaite avoir plus d'informations sur la formation IA & Automatisation (programme, dates, tarifs). Merci !",
       reservation: "Bonjour, je souhaite réserver ma place pour la prochaine session de formation IA & Automatisation.",
       entreprise: "Bonjour, nous sommes une entreprise intéressée par la formation IA & Automatisation pour plusieurs employés. Pouvez-vous nous contacter ?",
-      callback: "Bonjour, je souhaite être rappelé(e) pour discuter de la formation IA & Automatisation. Mon numéro est : "
+      callback: "Bonjour, je souhaite être rappelé(e) pour discuter de la formation IA & Automatisation."
     };
 
     const selectedMessage = messages[messageType] || messages.default;
@@ -140,195 +209,249 @@ const IAAdvantages = () => {
     window.open(whatsappUrl, '_blank');
   };
 
+  const toggleAdvantage = (id) => {
+    setActiveAdvantage(activeAdvantage === id ? null : id);
+  };
+
   return (
-    <section className="ia-advantages">
-      {/* Header avec message principal */}
+    <section id="avantages" className="ia-advantages">
+      {/* Header Section */}
       <div className="advantages-header">
-        <h1 className="main-title">
-          🚀 AVANTAGES CLÉS DE LA FORMATION IA & AUTOMATISATION
-        </h1>
-        <p className="header-subtitle">
-          La formation transforme l'IA en levier de performance réelle, pas en gadget.
-        </p>
+        <div className="header-content">
+          <div className="header-badge">
+            <FaChartLine /> AVANTAGES STRATÉGIQUES
+          </div>
+          <h1 className="main-title">
+            Transformez l'IA en levier de performance réelle
+          </h1>
+          <p className="header-subtitle">
+            Notre formation ne vous apprend pas seulement à utiliser l'IA, 
+            mais à la transformer en avantage concurrentiel durable pour votre entreprise.
+          </p>
+        </div>
       </div>
 
-      {/* Grille des avantages */}
-      <div className="advantages-container">
-        {advantages.map((advantage, index) => (
+      {/* Advantages Grid */}
+      <div className="advantages-grid">
+        {advantages.map((advantage) => (
           <div 
-            key={index} 
-            className="advantage-card"
-            style={{ borderTopColor: advantage.color }}
+            key={advantage.id} 
+            className={`advantage-card ${activeAdvantage === advantage.id ? 'expanded' : ''}`}
+            onClick={() => toggleAdvantage(advantage.id)}
           >
-            {/* En-tête de la carte */}
-            <div className="advantage-card-header">
-              <div className="advantage-icon-container">
-                <span className="advantage-main-icon">{advantage.icon}</span>
-                <div 
-                  className="percentage-badge"
-                  style={{ backgroundColor: `${advantage.color}20`, color: advantage.color }}
-                >
-                  {advantage.percentage}
-                </div>
+            {/* Card Header */}
+            <div className="card-header">
+              <div className="advantage-icon-container" style={{ background: advantage.gradient }}>
+                {advantage.icon}
               </div>
               <div className="advantage-title-section">
                 <h3 className="advantage-title">{advantage.title}</h3>
                 <p className="advantage-description">{advantage.description}</p>
               </div>
-            </div>
-
-            {/* Points clés */}
-            <div className="advantage-key-points">
-              <h4 className="key-points-title">🔑 Points forts :</h4>
-              <div className="key-points-grid">
-                {advantage.keyPoints.map((point, pointIndex) => (
-                  <div key={pointIndex} className="key-point-item">
-                    <div className="key-point-header">
-                      <span 
-                        className="point-bullet"
-                        style={{ backgroundColor: advantage.color }}
-                      >
-                        ✓
-                      </span>
-                      <strong className="point-title">{point.title}</strong>
-                    </div>
-                    <p className="point-description">{point.desc}</p>
-                  </div>
-                ))}
+              <div className="stats-badge" style={{ borderColor: advantage.color }}>
+                <div className="stats-value">{advantage.stats.percentage}</div>
+                <div className="stats-label">{advantage.stats.label}</div>
               </div>
             </div>
 
-            {/* Résultat */}
-            <div 
-              className="advantage-result"
-              style={{ backgroundColor: `${advantage.color}15`, borderLeftColor: advantage.color }}
-            >
-              <span className="result-arrow">➡️</span>
-              <span className="result-text">{advantage.result}</span>
+            {/* Expanded Content */}
+            {activeAdvantage === advantage.id && (
+              <div className="card-content">
+                {/* Key Points */}
+                <div className="key-points-section">
+                  <h4 className="section-title">
+                    <FaCheckCircle className="section-icon" />
+                    Points clés
+                  </h4>
+                  <div className="key-points-grid">
+                    {advantage.keyPoints.map((point, index) => (
+                      <div key={index} className="key-point-card">
+                        <div className="point-icon">{point.icon}</div>
+                        <div className="point-content">
+                          <h5>{point.title}</h5>
+                          <p>{point.description}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Outcome */}
+                <div className="outcome-section" style={{ borderLeftColor: advantage.color }}>
+                  <div className="outcome-icon">
+                    <FaArrowRight />
+                  </div>
+                  <div className="outcome-content">
+                    <h5>Résultat concret</h5>
+                    <p>{advantage.outcome}</p>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Expand/Collapse Indicator */}
+            <div className="expand-indicator">
+              {activeAdvantage === advantage.id ? <FaCaretUp /> : <FaCaretDown />}
             </div>
           </div>
         ))}
       </div>
 
-      {/* Section des résultats finaux */}
-      <div className="final-results-section">
-        <h2 className="results-title">🎯 Résultat final de la formation</h2>
-        <div className="results-grid">
-          {finalResults.map((result, index) => (
-            <div key={index} className="result-item">
-              <div className="result-icon">{result.icon}</div>
-              <div className="result-text">{result.text}</div>
+      {/* Impact Stats */}
+      <div className="impact-section">
+        <div className="section-header">
+          <h2>
+            <FaChartLine className="section-icon" />
+            Impact mesurable garanti
+          </h2>
+          <p>Des résultats concrets que nous nous engageons à atteindre</p>
+        </div>
+        <div className="stats-grid">
+          {impactStats.map((stat, index) => (
+            <div key={index} className="stat-card">
+              <div className="stat-icon" style={{ color: advantages[index].color }}>
+                {stat.icon}
+              </div>
+              <div className="stat-content">
+                <div className="stat-value">{stat.value}</div>
+                <div className="stat-label">{stat.label}</div>
+                <div className="stat-description">{stat.description}</div>
+              </div>
             </div>
           ))}
         </div>
-        <div className="final-message">
-          <p>
-            <strong>👉 La formation transforme l'IA en levier de performance réelle, pas en gadget.</strong>
-          </p>
-        </div>
       </div>
 
-      {/* Statistiques d'impact - VERSION AMÉLIORÉE */}
-      <div className="impact-stats">
-        <h2 className="stats-title">📊 Impact mesurable garanti</h2>
-        <div className="stats-grid">
-          <div className="stat-card">
-            <div className="stat-icon">⏱️</div>
-            <div className="stat-value">48%</div>
-            <div className="stat-label">Temps gagné sur tâches répétitives</div>
-            <div className="stat-detail">Automatisation complète</div>
-          </div>
-          
-          <div className="stat-card">
-            <div className="stat-icon">💰</div>
-            <div className="stat-value">1 mois</div>
-            <div className="stat-label">ROI dès le premier mois</div>
-            <div className="stat-detail">Retour sur investissement immédiat</div>
-          </div>
-          
-          <div className="stat-card">
-            <div className="stat-icon">🎯</div>
-            <div className="stat-value">100%</div>
-            <div className="stat-label">Participants autonomes</div>
-            <div className="stat-detail">Capacité à créer leurs agents IA</div>
-          </div>
-          
-          <div className="stat-card">
-            <div className="stat-icon">📈</div>
-            <div className="stat-value">3x</div>
-            <div className="stat-label">Productivité augmentée</div>
-            <div className="stat-detail">En moyenne sur 3 mois</div>
+      {/* Final Results */}
+      <div className="results-section">
+        <div className="section-header">
+          <h2>
+            <FaTrophy className="section-icon" />
+            Résultat final de la formation
+          </h2>
+          <p>Votre entreprise après la formation</p>
+        </div>
+        <div className="results-grid">
+          {finalResults.map((result, index) => (
+            <div key={index} className="result-card">
+              <div className="result-icon" style={{ color: advantages[index].color }}>
+                {result.icon}
+              </div>
+              <div className="result-content">
+                <h4>{result.title}</h4>
+                <p>{result.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="final-statement">
+          <div className="statement-icon">🎯</div>
+          <div className="statement-content">
+            <h3>La formation transforme l'IA en levier de performance réelle, pas en gadget.</h3>
+            <p>Une approche concrète pour des résultats mesurables</p>
           </div>
         </div>
       </div>
 
-      {/* CTA avec WhatsApp */}
-      <div className="advantages-cta">
-        <div className="cta-content">
-          <h3>🚀 Prêt à transformer votre entreprise ?</h3>
-          <p>
-            Contactez-nous directement sur WhatsApp pour réserver votre place
-            ou obtenir plus d'informations.
-          </p>
-          
-          <div className="contact-info">
-            <div className="contact-item">
-              <span className="contact-icon">📱</span>
-              <span className="contact-text">+216 23 513 870</span>
+      {/* CTA Section */}
+      <div className="cta-section">
+        <div className="cta-container">
+          <div className="cta-content">
+            <div className="cta-badge">
+              <FaWhatsapp /> CONTACT DIRECT
             </div>
-            <div className="contact-item">
-              <span className="contact-icon">⏰</span>
-              <span className="contact-text">Disponible 7j/7 de 9h à 20h</span>
+            <h2>Prêt à transformer votre entreprise ?</h2>
+            <p>
+              Contactez-nous directement sur WhatsApp pour réserver votre place 
+              ou obtenir plus d'informations.
+            </p>
+            
+            <div className="contact-info">
+              <div className="contact-item">
+                <div className="contact-icon">
+                  <FaPhone />
+                </div>
+                <div className="contact-details">
+                  <strong>+216 23 513 870</strong>
+                  <small>Disponible 7j/7 de 9h à 20h</small>
+                </div>
+              </div>
+              <div className="contact-item">
+                <div className="contact-icon">
+                  <FaCalendarAlt />
+                </div>
+                <div className="contact-details">
+                  <strong>Prochaine session</strong>
+                  <small>12 places disponibles</small>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        
-        <div className="cta-buttons-container">
-          <button 
-            className="cta-button primary"
-            onClick={() => handleWhatsAppClick('reservation')}
-          >
-            <span className="button-icon">✅</span>
-            Réserver ma place
-            <span className="cta-arrow">→</span>
-          </button>
-          
-          <button 
-            className="cta-button secondary"
-            onClick={() => setShowContactOptions(!showContactOptions)}
-          >
-            <span className="button-icon">💬</span>
-            Autres options de contact
-            <span className="cta-arrow">{showContactOptions ? '↑' : '↓'}</span>
-          </button>
-          
-          {showContactOptions && (
-            <div className="contact-options">
-              <button 
-                className="contact-option"
-                onClick={() => handleWhatsAppClick('info')}
-              >
-                <span className="option-icon">📋</span>
-                Demander le programme détaillé
-              </button>
-              
-              <button 
-                className="contact-option"
-                onClick={() => handleWhatsAppClick('entreprise')}
-              >
-                <span className="option-icon">🏢</span>
-                Demande entreprise (plusieurs places)
-              </button>
-              
-              <button 
-                className="contact-option"
-                onClick={() => handleWhatsAppClick('callback')}
-              >
-                <span className="option-icon">📞</span>
-                Être rappelé par un consultant
-              </button>
-            </div>
-          )}
+
+          <div className="cta-actions">
+            {/* Primary CTA */}
+            <button 
+              className="cta-btn primary-cta"
+              onClick={() => handleWhatsAppClick('reservation')}
+            >
+              <FaWhatsapp className="cta-icon" />
+              <div className="cta-text">
+                <span className="cta-title">Réserver ma place</span>
+                <span className="cta-subtitle">WhatsApp direct</span>
+              </div>
+              <FaArrowRight className="cta-arrow" />
+            </button>
+
+            {/* Toggle Contact Options */}
+            <button 
+              className="cta-btn secondary-cta"
+              onClick={() => setShowContactOptions(!showContactOptions)}
+            >
+              <div className="cta-icon">💬</div>
+              <div className="cta-text">
+                <span className="cta-title">Autres options de contact</span>
+              </div>
+              {showContactOptions ? <FaCaretUp /> : <FaCaretDown />}
+            </button>
+
+            {/* Contact Options */}
+            {showContactOptions && (
+              <div className="contact-options">
+                <button 
+                  className="contact-option"
+                  onClick={() => handleWhatsAppClick('info')}
+                >
+                  <FaFileAlt className="option-icon" />
+                  <div className="option-content">
+                    <span>Demander le programme détaillé</span>
+                    <small>PDF complet avec modules</small>
+                  </div>
+                </button>
+                
+                <button 
+                  className="contact-option"
+                  onClick={() => handleWhatsAppClick('entreprise')}
+                >
+                  <FaBuilding className="option-icon" />
+                  <div className="option-content">
+                    <span>Demande entreprise</span>
+                    <small>Plusieurs places, devis groupé</small>
+                  </div>
+                </button>
+                
+                <button 
+                  className="contact-option"
+                  onClick={() => handleWhatsAppClick('callback')}
+                >
+                  <FaPhone className="option-icon" />
+                  <div className="option-content">
+                    <span>Être rappelé</span>
+                    <small>Par un consultant spécialisé</small>
+                  </div>
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </section>

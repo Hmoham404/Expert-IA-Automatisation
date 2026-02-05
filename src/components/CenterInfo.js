@@ -1,34 +1,110 @@
 import React from 'react';
-import { FaMapMarkerAlt, FaPhone, FaUserTie, FaBuilding, FaCertificate, FaWifi, FaCar, FaAccessibleIcon, FaGraduationCap } from 'react-icons/fa';
+import { 
+  FaMapMarkerAlt, 
+  FaPhone, 
+  FaUserTie, 
+  FaBuilding, 
+  FaCertificate, 
+  FaWifi, 
+  FaCar, 
+  FaAccessibleIcon, 
+  FaGraduationCap,
+  FaChalkboardTeacher,
+  FaBook,
+  FaCoffee,
+  FaUsers,
+  FaCalendarAlt,
+  FaCheckCircle,
+  FaStar
+} from 'react-icons/fa';
 import './CenterInfo.css';
 
 const CenterInfo = () => {
-
   const logoPath = process.env.PUBLIC_URL + '/images/logo-essor-formation.png';
-  
-  // Chemin de secours si le logo n'existe pas
   const logoFallback = process.env.PUBLIC_URL + '/images/logo-essor.svg';
 
+  const facilities = [
+    { icon: <FaWifi />, title: "WiFi Haut Débit", description: "Connexion fibre optique" },
+    { icon: "💻", title: "Salles Informatiques", description: "PCs dernière génération" },
+    { icon: <FaCar />, title: "Parking", description: "Placement sécurisé gratuit" },
+    { icon: <FaAccessibleIcon />, title: "Accessibilité", description: "PMR adapté" },
+    { icon: <FaBook />, title: "Ressources", description: "Bibliothèque spécialisée" },
+    { icon: <FaCoffee />, title: "Espace Détente", description: "Cafétéria & repos" },
+    { icon: <FaChalkboardTeacher />, title: "Amphithéâtre", description: "Salle de conférence" },
+    { icon: <FaUsers />, title: "Salles de travail", description: "Espaces collaboratifs" }
+  ];
+
+  const contactMethods = [
+    { 
+      type: "Téléphone Principal", 
+      value: "73 371 170", 
+      schedule: "Lun-Ven: 8h-18h | Sam: 8h-13h",
+      icon: <FaPhone />,
+      href: "tel:73371170"
+    },
+    { 
+      type: "Téléphone Secondaire", 
+      value: "55 691 152", 
+      schedule: "Contact alternatif",
+      icon: <FaPhone />,
+      href: "tel:55691152"
+    },
+    { 
+      type: "Type de Centre", 
+      value: "Formation Initiale & Continue", 
+      schedule: "Agréé par l'État",
+      icon: "🏢"
+    },
+    { 
+      type: "Prochaine Session", 
+      value: "À définir", 
+      schedule: "12 places maximum",
+      icon: <FaCalendarAlt />
+    }
+  ];
+
+  const agreementFeatures = [
+    "Formation qualité ISO",
+    "Certifications reconnues",
+    "Financement possible",
+    "Suivi personnalisé",
+    "Évaluation continue",
+    "Attestation officielle"
+  ];
+
   return (
-    <section id="center" className="center-info fade-in">
-      <div className="section-header">
-        <h2>🏢 L'Essor Formation</h2>
-        <p>Centre de Formation Professionnelle Agréé par l'État</p>
-      </div>
-      
-      <div className="center-grid">
-        <div className="center-card">
-          <div className="card-header">
-            <div className="center-logo-container">
-              <div className="logo-placeholder">
-                {/* Logo du centre */}
-                <div className="logo-wrapper">
+    <section id="center" className="center-info">
+      <div className="center-container">
+        {/* Header Section */}
+        <div className="center-header">
+          <div className="header-badge">
+            <FaStar /> CENTRE AGRÉÉ PAR L'ÉTAT
+          </div>
+          <h1 className="center-main-title">
+            L'Essor Formation
+            <span className="title-sub">Centre d'Excellence Professionnelle</span>
+          </h1>
+          <p className="center-intro">
+            Centre de formation initiale et continue agréé par l'État tunisien, 
+            spécialisé dans les formations professionnelles de haute qualité avec 
+            une approche pédagogique innovante.
+          </p>
+        </div>
+
+        {/* Main Grid */}
+        <div className="center-grid">
+          {/* Left Column - Center Identity */}
+          <div className="center-identity">
+            {/* Logo & Basic Info */}
+            <div className="identity-card">
+              <div className="logo-section">
+                <div className="logo-container">
                   <img 
                     src={logoPath} 
                     alt="Logo L'Essor Formation" 
-                    className="center-logo-image"
+                    className="center-logo"
                     onError={(e) => {
-                      e.target.onerror = null; // Empêche les boucles d'erreur
+                      e.target.onerror = null;
                       e.target.src = logoFallback;
                       if (e.target.src === logoFallback && e.target.onerror) {
                         e.target.style.display = 'none';
@@ -38,172 +114,209 @@ const CenterInfo = () => {
                   />
                   <div className="logo-fallback">
                     <FaGraduationCap className="fallback-icon" />
-                    <span className="fallback-text">L'ESSOR</span>
+                    <div className="fallback-text">
+                      <span className="fallback-title">L'ESSOR</span>
+                      <span className="fallback-subtitle">FORMATION</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="identity-info">
+                  <div className="agreement-badge-large">
+                    <FaCertificate />
+                    <div>
+                      <span className="badge-title">Agrément N°</span>
+                      <span className="badge-number">51-496-19</span>
+                    </div>
+                  </div>
+                  <div className="identity-tags">
+                    <span className="identity-tag">🏛️ Établissement Public</span>
+                    <span className="identity-tag">🎓 Formation Certifiante</span>
+                    <span className="identity-tag">⭐ Excellence Pédagogique</span>
                   </div>
                 </div>
               </div>
-              <div className="center-info-header">
-                <h3>L'Essor Formation</h3>
-                <p className="center-agreement">✅ Agréé par l'État - N° 51-496-19</p>
+            </div>
+
+            {/* Director Section */}
+            <div className="director-card">
+              <div className="director-header">
+                <FaUserTie className="director-icon" />
+                <h3>Direction & Équipe</h3>
               </div>
-            </div>
-          </div>
-          
-          <div className="center-details">
-            <div className="detail-section">
-              <h3><FaBuilding /> À propos du centre</h3>
-              <p className="center-description">
-                Centre de formation initiale et continue situé à Hammam-Sousse, 
-                spécialisé dans les formations professionnelles de qualité avec 
-                une approche pédagogique moderne et des équipements à la pointe.
-                <br /><br />
-                <strong>Directrice : Hanen Missaoui</strong>
-              </p>
-            </div>
-            
-            <div className="detail-section">
-              <h3><FaUserTie /> Direction & Équipe</h3>
-              <div className="director-info">
-                <div className="director-avatar">
-                  <div className="avatar-initials">HM</div>
-                </div>
-                <div className="director-details">
-                  <h4>Hanen Missaoui</h4>
-                  <p className="director-title">Directrice de L'Essor Formation</p>
-                  <p className="director-quote">
-                    "Notre mission est de vous fournir les compétences les plus demandées 
-                    sur le marché avec un accompagnement personnalisé et des méthodes 
-                    pédagogiques innovantes."
-                  </p>
+              <div className="director-content">
+                <div className="director-profile">
+                  <div className="director-avatar">
+                    <div className="avatar-circle">
+                      <span className="avatar-initials">HM</span>
+                    </div>
+                    <div className="director-badge">👑 Directrice</div>
+                  </div>
+                  <div className="director-details">
+                    <h4>Hanen Missaoui</h4>
+                    <p className="director-title">Directrice de L'Essor Formation</p>
+                    <div className="director-expertise">
+                      <span>🎯 15+ ans d'expérience</span>
+                      <span>📚 Expert en pédagogie</span>
+                      <span>🚀 Innovation continue</span>
+                    </div>
+                    <blockquote className="director-quote">
+                      "Notre engagement est de fournir des formations d'excellence 
+                      qui transforment les compétences et accélèrent les carrières 
+                      professionnelles."
+                    </blockquote>
+                  </div>
                 </div>
               </div>
             </div>
-            
-            <div className="detail-section">
-              <h3><FaMapMarkerAlt /> Localisation & Accès</h3>
-              <div className="location-info">
-                <p className="address">
-                  <strong>📍 Adresse :</strong> Hammam-Sousse, Tunisie
-                </p>
-                <div className="map-container">
-                  <div className="map-placeholder">
-                    <FaMapMarkerAlt className="map-icon" />
-                    <p>Centre situé à Hammam-Sousse</p>
-                    <small>Zone facile d'accès - Parking disponible</small>
-                    <div className="location-details">
-                      <span>🚗 Accès voiture facile</span>
-                      <span>🚍 Transports en commun à proximité</span>
-                      <span>🅿️ Parking gratuit</span>
+
+            {/* Location Section */}
+            <div className="location-card">
+              <div className="location-header">
+                <FaMapMarkerAlt className="location-icon" />
+                <h3>Localisation & Accès</h3>
+              </div>
+              <div className="location-content">
+                <div className="address-box">
+                  <div className="address-icon">📍</div>
+                  <div className="address-details">
+                    <h4>Hammam-Sousse, Tunisie</h4>
+                    <p>Centre situé dans une zone stratégique facile d'accès</p>
+                  </div>
+                </div>
+                <div className="access-features">
+                  <div className="access-item">
+                    <div className="access-icon">🚗</div>
+                    <div className="access-details">
+                      <strong>Accès Voiture</strong>
+                      <span>Parking gratuit sécurisé</span>
+                    </div>
+                  </div>
+                  <div className="access-item">
+                    <div className="access-icon">🚍</div>
+                    <div className="access-details">
+                      <strong>Transports</strong>
+                      <span>Arrêts de bus à proximité</span>
+                    </div>
+                  </div>
+                  <div className="access-item">
+                    <div className="access-icon">🏢</div>
+                    <div className="access-details">
+                      <strong>Infrastructure</strong>
+                      <span>Bâtiment moderne et équipé</span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+          {/* Right Column - Contact & Facilities */}
+          <div className="center-details">
+            {/* Contact Section */}
+            <div className="contact-card">
+              <div className="contact-header">
+                <FaPhone className="contact-icon" />
+                <h3>Contact & Renseignements</h3>
+              </div>
+              <div className="contact-grid">
+                {contactMethods.map((method, index) => (
+                  <a 
+                    key={index} 
+                    href={method.href || '#'} 
+                    className={`contact-method ${!method.href ? 'non-clickable' : ''}`}
+                    onClick={!method.href ? (e) => e.preventDefault() : null}
+                  >
+                    <div className="method-icon-wrapper">
+                      {method.icon}
+                    </div>
+                    <div className="method-content">
+                      <h4>{method.type}</h4>
+                      <p className="method-value">{method.value}</p>
+                      <span className="method-schedule">{method.schedule}</span>
+                    </div>
+                  </a>
+                ))}
+              </div>
+              <div className="contact-footer">
+                <p className="contact-notice">
+                  💡 <strong>Conseil :</strong> Pour une réponse rapide, privilégiez 
+                  les appels téléphoniques en heures ouvrables.
+                </p>
+              </div>
+            </div>
+
+            {/* Facilities Section */}
+            <div className="facilities-card">
+              <div className="facilities-header">
+                <FaBuilding className="facilities-icon" />
+                <h3>Infrastructures & Équipements</h3>
+              </div>
+              <div className="facilities-grid">
+                {facilities.map((facility, index) => (
+                  <div key={index} className="facility-item">
+                    <div className="facility-icon-wrapper">
+                      {facility.icon}
+                    </div>
+                    <div className="facility-content">
+                      <h4>{facility.title}</h4>
+                      <p>{facility.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Agreement Section */}
+            <div className="agreement-card">
+              <div className="agreement-header">
+                <FaCertificate className="agreement-icon" />
+                <h3>Garanties Officielles</h3>
+              </div>
+              <div className="agreement-content">
+                <div className="agreement-badge-main">
+                  <div className="badge-content">
+                    <span className="badge-label">Agrément</span>
+                    <span className="badge-number-main">N° 51-496-19</span>
+                  </div>
+                </div>
+                <p className="agreement-description">
+                  Centre de formation agréé par l'État tunisien, garantissant 
+                  des formations de qualité, des certifications reconnues et 
+                  l'éligibilité aux dispositifs de financement publics.
+                </p>
+                <div className="agreement-features">
+                  {agreementFeatures.map((feature, index) => (
+                    <div key={index} className="agreement-feature">
+                      <FaCheckCircle className="feature-icon" />
+                      <span>{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        
-        <div className="contact-facilities">
-          <div className="contact-section">
-            <h3><FaPhone /> Contact Direct</h3>
-            <div className="contact-methods">
-              <a href="tel:73371170" className="contact-method">
-                <div className="method-icon">
-                  <FaPhone />
-                </div>
-                <div className="method-details">
-                  <strong>Téléphone Principal</strong>
-                  <span>73 371 170</span>
-                  <small>Lun-Ven: 8h-18h | Sam: 8h-13h</small>
-                </div>
-              </a>
-              
-              <a href="tel:55691152" className="contact-method">
-                <div className="method-icon">
-                  <FaPhone />
-                </div>
-                <div className="method-details">
-                  <strong>Téléphone Secondaire</strong>
-                  <span>55 691 152</span>
-                  <small>Contact alternatif</small>
-                </div>
-              </a>
-              
-              <div className="contact-method">
-                <div className="method-icon">🏢</div>
-                <div className="method-details">
-                  <strong>Type de Centre</strong>
-                  <span>Formation Initiale & Continue</span>
-                  <small>Agréé par l'État</small>
-                </div>
-              </div>
-              
-              <div className="contact-method">
-                <div className="method-icon">📅</div>
-                <div className="method-details">
-                  <strong>Prochaine Session IA</strong>
-                  <span>À définir - Contactez-nous</span>
-                  <small>12 places maximum</small>
-                </div>
-              </div>
-            </div>
+
+        {/* Bottom Stats */}
+        <div className="center-stats">
+          <div className="stat-item">
+            <div className="stat-number">15+</div>
+            <div className="stat-label">Années d'expérience</div>
           </div>
-          
-          <div className="facilities-section">
-            <h3><FaCertificate /> Infrastructures & Équipements</h3>
-            <div className="facilities-grid">
-              <div className="facility-item">
-                <FaWifi className="facility-icon" />
-                <h4>WiFi Haut Débit</h4>
-                <p>Connexion Internet rapide et stable</p>
-              </div>
-              
-              <div className="facility-item">
-                <div className="facility-icon">💻</div>
-                <h4>Salles Informatiques</h4>
-                <p>Équipements modernes et performants</p>
-              </div>
-              
-              <div className="facility-item">
-                <FaCar className="facility-icon" />
-                <h4>Parking</h4>
-                <p>Placement sécurisé gratuit</p>
-              </div>
-              
-              <div className="facility-item">
-                <FaAccessibleIcon className="facility-icon" />
-                <h4>Accessibilité</h4>
-                <p>Adapté aux personnes à mobilité réduite</p>
-              </div>
-              
-              <div className="facility-item">
-                <div className="facility-icon">📚</div>
-                <h4>Ressources Pédagogiques</h4>
-                <p>Bibliothèque et supports de formation</p>
-              </div>
-              
-              <div className="facility-item">
-                <div className="facility-icon">☕</div>
-                <h4>Espace Détente</h4>
-                <p>Zone café et repos pour les pauses</p>
-              </div>
-            </div>
+          <div className="stat-divider"></div>
+          <div className="stat-item">
+            <div className="stat-number">1000+</div>
+            <div className="stat-label">Apprenants formés</div>
           </div>
-          
-          <div className="agreement-section">
-            <h3>🎓 Agrément Officiel</h3>
-            <div className="agreement-badge">
-              <span>N° 51-496-19</span>
-            </div>
-            <p className="agreement-description">
-              Centre de formation agréé par l'État tunisien, garantissant des formations 
-              de qualité et des certifications reconnues. Toutes nos formations sont 
-              éligibles aux dispositifs de financement.
-            </p>
-            <div className="agreement-features">
-              <span>✅ Formation qualité</span>
-              <span>✅ Certifications reconnues</span>
-              <span>✅ Financement possible</span>
-            </div>
+          <div className="stat-divider"></div>
+          <div className="stat-item">
+            <div className="stat-number">50+</div>
+            <div className="stat-label">Formations disponibles</div>
+          </div>
+          <div className="stat-divider"></div>
+          <div className="stat-item">
+            <div className="stat-number">98%</div>
+            <div className="stat-label">Satisfaction</div>
           </div>
         </div>
       </div>
