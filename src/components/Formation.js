@@ -5,264 +5,238 @@ const WorkflowIAFormation = () => {
   // Données principales
   const formationsData = {
     header: {
-      title: "🎓 Formations Expert en Automatisation IA",
-      subtitle: "De l'automatisation basique aux Super Agents IA avancés",
-      description: "Formations certifiantes pour transformer vos processus métier grâce à l'IA"
+      title: "🎓 Formation Expert en Automatisation IA",
+      subtitle: "Maîtrisez l'automatisation intelligente en seulement 3 jours",
+      description: "Formation intensive et certifiante pour transformer vos processus métier grâce aux workflows IA"
     },
 
     formations: [
       {
         id: 1,
-        niveau: "DÉBUTANT",
+        niveau: "ESSENTIEL",
         icon: "🚀",
-        titre: "Workflow IA Automation - Niveau Débutant",
-        sousTitre: "Automatisez et simplifiez vos tâches et boostez votre productivité en entreprise",
-        duree: "24 heures",
-        couleur: "#2563EB", // Bleu roi
+        titre: "Workflow IA Automation - Formation Essentielle",
+        sousTitre: "Apprenez à automatiser vos processus métier en 3 jours intensifs",
+        duree: "3 jours intensifs (24 heures)",
+        couleur: "#2563EB",
         badgeColor: "#1D4ED8",
-        resultat: "Faire gagner du temps à vos équipes dans des tâches répétitives et économiser votre budget de production",
+        resultat: "Maîtriser les fondamentaux de l'automatisation IA et créer vos premiers workflows opérationnels",
         
+        // Programme 3 jours
+        programme: [
+          {
+            jour: 1,
+            titre: "Jour 1 : Fondamentaux & Premiers Workflows",
+            horaire: "9h00 - 18h00 (avec pause déjeuner)",
+            themes: [
+              "Introduction aux workflows IA",
+              "Découverte des outils no-code",
+              "Création du premier automate",
+              "Exercices pratiques sur cas réels"
+            ]
+          },
+          {
+            jour: 2,
+            titre: "Jour 2 : Automatisations Avancées",
+            horaire: "9h00 - 18h00 (avec pause déjeuner)",
+            themes: [
+              "Automatisation multi-plateformes",
+              "Intégration API de base",
+              "Gestion des erreurs et logs",
+              "Cas client : automatisation complète"
+            ]
+          },
+          {
+            jour: 3,
+            titre: "Jour 3 : Industrialisation & Certification",
+            horaire: "9h00 - 18h00 (avec pause déjeuner)",
+            themes: [
+              "Optimisation des performances",
+              "Documentation des workflows",
+              "Projet final supervisé",
+              "Préparation certification"
+            ]
+          }
+        ],
+
         objectifs: [
-          "Comprendre les bases de l'automatisation de tâches grâce à l'IA",
-          "Être capable de créer des automatisations simples et efficaces",
-          "Avoir une méthodologie pour repérer et automatiser les tâches répétitives",
-          "Gagner en productivité et en fiabilité au quotidien"
+          "Créer des workflows IA fonctionnels en 3 jours",
+          "Maîtriser les outils d'automatisation essentiels",
+          "Automatiser des processus métier concrets",
+          "Obtenir la certification officielle"
         ],
 
         prerequis: [
-          "Disposer d'une bonne connexion Internet",
-          "Avoir un ordinateur portable (Windows, Mac, Linux)",
-          "Aucun prérequis technique en programmation nécessaire",
-          "Être à l'aise avec l'utilisation de base d'un ordinateur"
-        ],
-
-        modules: [
-          {
-            id: 1,
-            titre: "Module 1 | Les fondamentaux des workflows IA",
-            icon: "📚",
-            points: [
-              "Qu'est-ce qu'un workflow d'automatisation ?",
-              "Pourquoi et comment automatiser ses tâches ?",
-              "Comprendre les outils no-code et low-code",
-              "Identifier les processus internes automatisables"
-            ]
-          },
-          {
-            id: 2,
-            titre: "Module 2 | Cas pratiques d'automatisation",
-            icon: "🔧",
-            points: [
-              "Automatiser la gestion de tâches et la prise de rendez-vous",
-              "Automatiser la synchronisation entre bases de données et formulaires",
-              "Créer des séquences automatiques de communication",
-              "Concevoir et tester ses premiers workflows"
-            ]
-          },
-          {
-            id: 3,
-            titre: "Module 3 | Mise en place de workflows personnalisés",
-            icon: "⚙️",
-            points: [
-              "Choisir les bons outils selon son activité",
-              "Créer des workflows simples avec des outils no-code",
-              "Automatiser des tâches récurrentes : emails, documents",
-              "Optimiser ses flux de travail"
-            ]
-          },
-          {
-            id: 4,
-            titre: "Module 4 | Aller plus loin",
-            icon: "🚀",
-            points: [
-              "Introduction aux API pour les débutants",
-              "Construire une logique d'optimisation continue",
-              "Développer une culture de l'optimisation par l'IA",
-              "Identifier les tâches à haute valeur d'automatisation"
-            ]
-          }
+          "Ordinateur portable avec connexion internet",
+          "Connaissance basique de l'informatique",
+          "Aucune expérience en programmation requise",
+          "Motivation pour apprendre rapidement"
         ],
 
         resultats: [
           {
             icon: "🤖",
-            titre: "Créer des automatisations",
-            description: "Des workflows simples et efficaces"
+            titre: "Workflows opérationnels",
+            description: "3 workflows IA prêts à l'emploi"
           },
           {
-            icon: "🔍",
-            titre: "Identifier les tâches",
-            description: "Repérer les processus automatisables"
+            icon: "📋",
+            titre: "Certification",
+            description: "Certificat de compétences validé"
           },
           {
             icon: "⚡",
-            titre: "Gagner en productivité",
-            description: "Jusqu'à 10h par semaine"
+            titre: "Productivité",
+            description: "Gain de temps garanti dès J+1"
           },
           {
-            icon: "🔄",
-            titre: "Automatiser les routines",
-            description: "Tâches récurrentes automatisées"
+            icon: "🎯",
+            titre: "Expertise",
+            description: "Compétences immédiatement applicables"
           }
         ],
 
-        outils: ["Make", "Zapier", "Airtable", "Notion", "ChatGPT"]
+        outils: ["Make", "Zapier", "Airtable", "ChatGPT", "Google Sheets"]
       },
 
       {
         id: 2,
-        niveau: "AVANCÉ",
+        niveau: "EXPERT",
         icon: "⚡",
-        titre: "Workflow IA Automation - Niveau Avancé",
-        sousTitre: "Dominez l'automatisation IA : créez vos Super Agents et boostez votre activité",
-        duree: "24 heures",
-        couleur: "#4F46E5", // Violet bleu
+        titre: "Super Agents IA - Formation Expert",
+        sousTitre: "Devenez expert en agents IA autonomes en 3 jours intensifs",
+        duree: "3 jours intensifs (24 heures)",
+        couleur: "#4F46E5",
         badgeColor: "#4338CA",
-        resultat: "Être capable de concevoir, déployer et superviser un Super Agent IA opérationnel, adapté à son métier",
+        resultat: "Développer et déployer des Super Agents IA autonomes pour votre entreprise",
         
+        // Programme 3 jours
+        programme: [
+          {
+            jour: 1,
+            titre: "Jour 1 : Architecture des Super Agents",
+            horaire: "9h00 - 18h00 (avec pause déjeuner)",
+            themes: [
+              "Concepts avancés des agents IA",
+              "Architecture modulaire",
+              "Configuration N8n avancée",
+              "Premier agent fonctionnel"
+            ]
+          },
+          {
+            jour: 2,
+            titre: "Jour 2 : Développement & Intégration",
+            horaire: "9h00 - 18h00 (avec pause déjeuner)",
+            themes: [
+              "Développement d'agents spécialisés",
+              "Intégrations API complexes",
+              "Gestion de la mémoire des agents",
+              "Tests et optimisation"
+            ]
+          },
+          {
+            jour: 3,
+            titre: "Jour 3 : Déploiement & Industrialisation",
+            horaire: "9h00 - 18h00 (avec pause déjeuner)",
+            themes: [
+              "Hébergement et déploiement",
+              "Monitoring et supervision",
+              "Projet final : agent complet",
+              "Certification expert"
+            ]
+          }
+        ],
+
         objectifs: [
-          "Comprendre les Super Agents IA et leur valeur business",
-          "Concevoir un Super Agent IA modulaire et scalable",
-          "Maîtriser N8n pour centraliser et déclencher les actions",
-          "Être capable d'héberger ses propres agents IA",
-          "Déployer un agent IA opérationnel adapté à son métier"
+          "Architecturer des Super Agents IA modulaires",
+          "Maîtriser N8n pour l'orchestration avancée",
+          "Déployer des agents en production",
+          "Obtenir la certification Expert IA"
         ],
 
         prerequis: [
-          "Bonne compréhension des workflows d'automatisation",
-          "Expérience avec Make, Zapier ou N8n",
-          "Connaissance des bases de l'IA",
-          "Ordinateur portable avec bonnes performances"
-        ],
-
-        modules: [
-          {
-            id: 1,
-            titre: "Module 1 | Super Agent IA – Concepts & Structure",
-            icon: "🏗️",
-            points: [
-              "Différence entre automatisation classique et intelligence distribuée",
-              "Nouveaux paradigmes d'outillage (LLMs, API, graphes d'agents)",
-              "Architecture type d'un agent (inputs, mémoire, outputs)",
-              "Comprendre la logique de 'Super Agent' : tâches, rôles, délégation"
-            ]
-          },
-          {
-            id: 2,
-            titre: "Module 2 | Créer et configurer les sous-agents IA",
-            icon: "🤖",
-            points: [
-              "Définir les rôles (recherche, synthèse, action, supervision...)",
-              "Concevoir des prompts spécifiques et chaînables",
-              "Scénariser les interactions agent ↔ utilisateur ↔ API",
-              "Paramétrer et orchestrer des sous-agents spécialisés"
-            ]
-          },
-          {
-            id: 3,
-            titre: "Module 3 | Tester, intégrer et publier votre Super Agent",
-            icon: "🧪",
-            points: [
-              "Cas pratique : intégration dans une stack métier réelle",
-              "Tester les chemins critiques et les retours utilisateur",
-              "Versionner et documenter votre agent",
-              "Dashboard de supervision & logs dans N8n"
-            ]
-          },
-          {
-            id: 4,
-            titre: "Module 4 | Héberger vos agents IA",
-            icon: "☁️",
-            points: [
-              "Pourquoi héberger ses agents ? (confidentialité, personnalisation, coût)",
-              "Présentation des options : Ollama, LangChain + FastAPI",
-              "Dockerisation et déploiement (local, cloud, VPS)",
-              "Bonnes pratiques pour industrialiser"
-            ]
-          },
-          {
-            id: 5,
-            titre: "Module 5 | Stratégie d'implémentation",
-            icon: "🎯",
-            points: [
-              "Identifier d'autres cas à automatiser dans l'entreprise",
-              "Méthodologie d'audit de processus",
-              "Plan d'implémentation progressive",
-              "Introduction à l'orchestration multi-agents"
-            ]
-          }
+          "Expérience en automatisation (Make/Zapier)",
+          "Connaissances en workflows",
+          "Ordinateur performant",
+          "Notions d'APIs recommandées"
         ],
 
         resultats: [
           {
             icon: "🏗️",
-            titre: "Architecture scalable",
-            description: "Concevoir des Super Agents modulaires"
+            titre: "Architecture maîtrisée",
+            description: "Design d'agents scalables"
           },
           {
             icon: "🔧",
-            titre: "Maîtriser N8n",
-            description: "Centraliser et déclencher les actions"
+            titre: "Expertise N8n",
+            description: "Maîtrise complète de la plateforme"
           },
           {
             icon: "☁️",
-            titre: "Héberger ses agents",
-            description: "Solutions locales et cloud"
+            titre: "Déploiement cloud",
+            description: "Agents hébergés et opérationnels"
           },
           {
             icon: "📊",
-            titre: "Automatiser des processus complexes",
-            description: "À forte valeur ajoutée"
+            titre: "Projets complexes",
+            description: "Automatisation de processus avancés"
           }
         ],
 
-        outils: ["N8n", "LangChain", "Ollama", "Docker", "FastAPI"]
+        outils: ["N8n", "LangChain", "Docker", "FastAPI", "OpenAI"]
       }
     ],
 
-    admission: {
-      titre: "📝 Procédure d'admission",
-      steps: [
-        {
-          number: "01",
-          title: "Évaluation initiale",
-          description: "Analyse des besoins et de l'environnement du participant"
-        },
-        {
-          number: "02",
-          title: "Test de positionnement",
-          description: "Validation de l'adéquation avec la formation choisie"
-        },
-        {
-          number: "03",
-          title: "Personnalisation",
-          description: "Adaptation du contenu aux besoins spécifiques"
-        }
-      ]
-    },
-
     avantages: [
       {
-        icon: "🎯",
-        title: "Formation pratique",
-        description: "100% orientée sur des cas concrets métier"
+        icon: "⏱️",
+        title: "3 jours intensifs",
+        description: "Apprentissage accéléré et résultats immédiats"
       },
       {
         icon: "👨‍🏫",
-        title: "Expert certifié",
+        title: "Expert senior",
         description: "Formateur avec 10+ ans d'expérience en IA"
       },
       {
         icon: "📈",
-        title: "ROI garanti",
-        description: "Retour sur investissement mesurable dès 1 mois"
+        title: "ROI immédiat",
+        description: "Applications concrètes dès le lendemain"
       },
       {
         icon: "🔄",
-        title: "Suivi post-formation",
-        description: "Accompagnement pendant 3 mois après la formation"
+        title: "Support post-formation",
+        description: "3 mois d'accompagnement inclus"
       }
-    ]
+    ],
+
+    admission: {
+      titre: "📝 Admission & Financement",
+      steps: [
+        {
+          number: "01",
+          title: "Audit personnalisé",
+          description: "Analyse de vos besoins et objectifs"
+        },
+        {
+          number: "02",
+          title: "Plan de formation",
+          description: "Programme adapté à votre niveau"
+        },
+        {
+          number: "03",
+          title: "Financement",
+          description: "Solutions CPF, OPCO et entreprise"
+        }
+      ]
+    },
+
+    statistiques: {
+      satisfaction: "98%",
+      certification: "95%",
+      emploi: "89%"
+    }
   };
 
   return (
@@ -270,25 +244,25 @@ const WorkflowIAFormation = () => {
       {/* Header Hero Section */}
       <header className="formation-hero">
         <div className="hero-content">
-          <div className="hero-badge">🎓 FORMATIONS CERTIFIANTES</div>
+          <div className="hero-badge">🏆 FORMATION INTENSIVE 3 JOURS</div>
           <h1 className="hero-title">{formationsData.header.title}</h1>
           <p className="hero-subtitle">{formationsData.header.subtitle}</p>
           <p className="hero-description">{formationsData.header.description}</p>
           
           <div className="hero-stats">
             <div className="stat">
-              <div className="stat-number">48h</div>
-              <div className="stat-label">de formation totale</div>
+              <div className="stat-number">24h</div>
+              <div className="stat-label">sur 3 jours</div>
             </div>
             <div className="stat-divider"></div>
             <div className="stat">
-              <div className="stat-number">100%</div>
-              <div className="stat-label">pratique</div>
+              <div className="stat-number">{formationsData.statistiques.satisfaction}</div>
+              <div className="stat-label">de satisfaction</div>
             </div>
             <div className="stat-divider"></div>
             <div className="stat">
-              <div className="stat-number">2</div>
-              <div className="stat-label">niveaux certifiants</div>
+              <div className="stat-number">{formationsData.statistiques.certification}</div>
+              <div className="stat-label">certification réussie</div>
             </div>
           </div>
         </div>
@@ -297,8 +271,8 @@ const WorkflowIAFormation = () => {
       {/* Avantages Section */}
       <section className="avantages-section">
         <div className="section-header">
-          <h2>✨ Pourquoi choisir nos formations ?</h2>
-          <p>Des formations conçues pour des résultats immédiats et durables</p>
+          <h2>✨ Formation Intensive - Résultats Garantis</h2>
+          <p>Une méthode unique pour maîtriser l'automatisation IA en seulement 3 jours</p>
         </div>
         <div className="avantages-grid">
           {formationsData.avantages.map((avantage, index) => (
@@ -315,8 +289,12 @@ const WorkflowIAFormation = () => {
       {formationsData.formations.map((formation) => (
         <section key={formation.id} className="formation-section">
           <div className="formation-header">
-            <div className="formation-badge" style={{ backgroundColor: formation.badgeColor }}>
-              {formation.icon} NIVEAU {formation.niveau}
+            <div 
+              className="formation-badge" 
+              data-formation={formation.id}
+              style={{ backgroundColor: formation.badgeColor }}
+            >
+              {formation.icon} {formation.niveau}
             </div>
             <h2 className="formation-title">{formation.titre}</h2>
             <p className="formation-subtitle">{formation.sousTitre}</p>
@@ -324,12 +302,57 @@ const WorkflowIAFormation = () => {
             <div className="formation-meta">
               <div className="meta-item">
                 <span className="meta-icon">⏱️</span>
-                <span>{formation.duree}</span>
+                <span><strong>Durée:</strong> {formation.duree}</span>
               </div>
               <div className="meta-item">
                 <span className="meta-icon">🎯</span>
-                <span>Résultat: {formation.resultat}</span>
+                <span><strong>Résultat:</strong> {formation.resultat}</span>
               </div>
+              <div className="meta-item">
+                <span className="meta-icon">💰</span>
+                <span><strong>Financement:</strong> CPF, OPCO, Entreprise</span>
+              </div>
+              <div className="meta-item">
+                <span className="meta-icon">👥</span>
+                <span><strong>Format:</strong> Présentiel/Distanciel</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Programme 3 jours */}
+          <div className="programme-section">
+            <div className="section-subheader">
+              <h3>📅 Programme détaillé - 3 jours intensifs</h3>
+              <p>Un parcours progressif conçu pour des résultats immédiats</p>
+            </div>
+            
+            <div className="programme-jours">
+              {formation.programme.map((jour) => (
+                <div 
+                  key={jour.jour} 
+                  className="jour-card"
+                  data-formation={formation.id}
+                >
+                  <div className="jour-header" data-formation={formation.id}>
+                    <div className="jour-number">J{jour.jour}</div>
+                    <h4 className="jour-title">{jour.titre}</h4>
+                  </div>
+                  <div className="jour-content">
+                    <div className="jour-horaire">
+                      <span className="horaire-icon">🕒</span>
+                      <span>{jour.horaire}</span>
+                    </div>
+                    <div className="jour-themes">
+                      {jour.themes.map((theme, index) => (
+                        <div key={index} className="theme-item">
+                          <div className="theme-marker"></div>
+                          <span>{theme}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -339,7 +362,7 @@ const WorkflowIAFormation = () => {
               <div className="objectifs-card">
                 <div className="card-header">
                   <span className="card-icon">🎯</span>
-                  <h3>Objectifs pédagogiques</h3>
+                  <h3>Objectifs de la formation</h3>
                 </div>
                 <div className="card-content">
                   {formation.objectifs.map((objectif, index) => (
@@ -354,7 +377,7 @@ const WorkflowIAFormation = () => {
               <div className="prerequis-card">
                 <div className="card-header">
                   <span className="card-icon">📋</span>
-                  <h3>Prérequis</h3>
+                  <h3>Prérequis & Public visé</h3>
                 </div>
                 <div className="card-content">
                   {formation.prerequis.map((prerequis, index) => (
@@ -367,41 +390,12 @@ const WorkflowIAFormation = () => {
               </div>
             </div>
 
-            {/* Modules de formation */}
-            <div className="modules-section">
-              <div className="section-header">
-                <h3>📚 Programme détaillé de la formation</h3>
-                <p>Un parcours progressif pour maîtriser chaque compétence</p>
-              </div>
-              <div className="modules-grid">
-                {formation.modules.map((module) => (
-                  <div key={module.id} className="module-card">
-                    <div className="module-header">
-                      <span className="module-icon">{module.icon}</span>
-                      <h4>{module.titre}</h4>
-                    </div>
-                    <div className="module-content">
-                      {module.points.map((point, index) => (
-                        <div key={index} className="module-point">
-                          <div className="point-marker"></div>
-                          <span>{point}</span>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="module-footer">
-                      <span className="duration-badge">Durée: ~{formation.duree / formation.modules.length}h</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
             {/* Résultats et Outils */}
             <div className="resultats-outils">
               <div className="resultats-card">
                 <div className="card-header">
                   <span className="card-icon">✅</span>
-                  <h3>Résultats attendus</h3>
+                  <h3>À l'issue de la formation</h3>
                 </div>
                 <div className="resultats-grid">
                   {formation.resultats.map((resultat, index) => (
@@ -419,7 +413,7 @@ const WorkflowIAFormation = () => {
               <div className="outils-card">
                 <div className="card-header">
                   <span className="card-icon">🛠️</span>
-                  <h3>Outils utilisés</h3>
+                  <h3>Technologies maîtrisées</h3>
                 </div>
                 <div className="outils-grid">
                   {formation.outils.map((outil, index) => (
@@ -438,20 +432,22 @@ const WorkflowIAFormation = () => {
       <section className="admission-section">
         <div className="section-header">
           <h2>{formationsData.admission.titre}</h2>
-          <p>Un processus simple pour garantir la qualité et la pertinence de la formation</p>
+          <p>Un parcours simplifié pour accéder rapidement à la formation</p>
         </div>
         <div className="admission-steps">
           {formationsData.admission.steps.map((step, index) => (
-            <div key={index} className="admission-step">
-              <div className="step-number">{step.number}</div>
-              <div className="step-content">
-                <h3>{step.title}</h3>
-                <p>{step.description}</p>
+            <React.Fragment key={index}>
+              <div className="admission-step">
+                <div className="step-number">{step.number}</div>
+                <div className="step-content">
+                  <h3>{step.title}</h3>
+                  <p>{step.description}</p>
+                </div>
               </div>
               {index < formationsData.admission.steps.length - 1 && (
                 <div className="step-arrow">→</div>
               )}
-            </div>
+            </React.Fragment>
           ))}
         </div>
       </section>
@@ -459,11 +455,31 @@ const WorkflowIAFormation = () => {
       {/* CTA Section */}
       <section className="cta-section">
         <div className="cta-content">
-          <h2>Prêt à transformer vos processus avec l'IA ?</h2>
-          <p>Contactez-nous pour une évaluation gratuite de vos besoins</p>
+          <div className="cta-badge">🚀 PROCHAINES SESSIONS</div>
+          <h2>Prêt à maîtriser l'IA en 3 jours ?</h2>
+          <p>Sessions limitées à 8 participants pour un accompagnement optimal</p>
+          
+          <div className="cta-stats">
+            <div className="cta-stat">
+              <div className="cta-stat-number">{formationsData.statistiques.emploi}</div>
+              <div className="cta-stat-label">d'augmentation de productivité</div>
+            </div>
+          </div>
+
           <div className="cta-buttons">
-            <button className="btn-primary">📞 Demander un devis</button>
-            <button className="btn-secondary">📅 Réserver un audit gratuit</button>
+            <button className="btn-primary">
+              <span className="btn-icon">📞</span>
+              Réserver un entretien
+            </button>
+            <button className="btn-secondary">
+              <span className="btn-icon">📄</span>
+              Télécharger le programme détaillé
+            </button>
+          </div>
+
+          <div className="cta-note">
+            <span className="note-icon">💡</span>
+            <span>Financement CPF et OPCO 100% pris en charge pour les éligibles</span>
           </div>
         </div>
       </section>

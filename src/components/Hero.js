@@ -236,10 +236,7 @@ const Hero = () => {
                 <span className="expertise-icon">⚡</span>
                 <span>No-Code Automation Specialist</span>
               </div>
-              <div className="expertise-tag">
-                <span className="expertise-icon">🏢</span>
-                <span>+50 entreprises accompagnées</span>
-              </div>
+             
               <div className="expertise-tag">
                 <span className="expertise-icon">🎯</span>
                 <span>Formateur certifié</span>

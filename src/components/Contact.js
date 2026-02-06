@@ -1,17 +1,4 @@
 import React, { useState } from 'react';
-import { 
-  FaPhone, 
-  FaEnvelope, 
-  FaUser, 
-  FaBuilding, 
-  FaPaperPlane, 
-  FaClock,
-  FaUsers,
-  FaShieldAlt,
-  FaCheckCircle,
-  FaCalendarAlt,
-  FaChartLine
-} from 'react-icons/fa';
 import './Contact.css';
 
 const Contact = () => {
@@ -43,10 +30,9 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Simulate API call
+      // Simulation d'envoi
       await new Promise(resolve => setTimeout(resolve, 1500));
       
-      // Here you would integrate with EmailJS, Formspree, or your backend
       console.log('Form data submitted:', formData);
       
       setSubmitSuccess(true);
@@ -62,7 +48,6 @@ const Contact = () => {
         message: ''
       });
       
-      // Reset success message after 5 seconds
       setTimeout(() => setSubmitSuccess(false), 5000);
       
     } catch (error) {
@@ -72,11 +57,13 @@ const Contact = () => {
     }
   };
 
+  // Options adaptées aux formations IA
   const formationOptions = [
-    { value: 'beginner', label: 'Formation Débutant - Automatisation IA' },
-    { value: 'advanced', label: 'Formation Avancé - Super Agents IA' },
-    { value: 'custom', label: 'Formation Personnalisée sur Mesure' },
-    { value: 'consulting', label: 'Audit et Consulting Automatisation' }
+    { value: 'fondamentaux', label: 'Formation Fondamentaux - Automatisation IA' },
+    { value: 'expert', label: 'Formation Expert - Super Agents IA' },
+    { value: 'combiné', label: 'Package Complet (Fondamentaux + Expert)' },
+    { value: 'personnalisee', label: 'Formation Personnalisée sur Mesure' },
+    { value: 'audit', label: 'Audit Automatisation & Gestion des Données' }
   ];
 
   const participantOptions = [
@@ -94,39 +81,59 @@ const Contact = () => {
 
   return (
     <section id="contact" className="contact-section">
-      {/* Header */}
+      {/* Header avec mention Tunisie */}
       <div className="contact-header">
-        <div className="header-badge">
-          <FaPaperPlane /> CONTACT & INSCRIPTION
+        <div className="header-compliance">
+          <span className="tunisia-flag">🇹🇳</span>
+          <span>Formation certifiante conforme à la législation tunisienne</span>
         </div>
+        <div className="header-badge">🎓 DEMANDE D'INSCRIPTION</div>
         <h1 className="contact-title">
           Inscrivez-vous à la Formation IA
-          <span className="title-sub">Transformez votre entreprise dès aujourd'hui</span>
+          <span className="title-sub">Automatisez vos processus et optimisez vos données CSV/Excel</span>
         </h1>
         <p className="contact-intro">
           Prenez rendez-vous pour une consultation gratuite et découvrez 
-          comment nos formations en IA peuvent booster votre productivité.
+          comment nos formations en IA peuvent transformer votre productivité 
+          et optimiser la gestion de vos données clients.
         </p>
+        
+        <div className="header-stats">
+          <div className="header-stat">
+            <div className="stat-number">98%</div>
+            <div className="stat-label">Taux de satisfaction</div>
+          </div>
+          <div className="header-stat">
+            <div className="stat-number">24h</div>
+            <div className="stat-label">Formation intensive</div>
+          </div>
+          <div className="header-stat">
+            <div className="stat-number">📊</div>
+            <div className="stat-label">Gestion CSV/Excel</div>
+          </div>
+          <div className="header-stat">
+            <div className="stat-number">🇹🇳</div>
+            <div className="stat-label">Certifié Tunisie</div>
+          </div>
+        </div>
       </div>
 
       <div className="contact-container">
-        {/* Info Sidebar */}
+        {/* Sidebar Informations */}
         <div className="contact-sidebar">
-          {/* Contact Info */}
+          {/* Contact Direct */}
           <div className="sidebar-card">
             <div className="card-header">
               <h3>
-                <FaPhone className="header-icon" />
+                <span className="header-icon">📞</span>
                 Contact Direct
               </h3>
-              <p>Nous répondons rapidement à vos questions</p>
+              <p>Réponse rapide garantie sous 24h</p>
             </div>
             
             <div className="contact-methods">
               <a href="tel:73371170" className="contact-method">
-                <div className="method-icon phone">
-                  <FaPhone />
-                </div>
+                <div className="method-icon phone">📱</div>
                 <div className="method-details">
                   <strong>Téléphone Principal</strong>
                   <span className="method-value">73 371 170</span>
@@ -135,115 +142,189 @@ const Contact = () => {
               </a>
               
               <a href="mailto:centre.tft@gmail.com" className="contact-method">
-                <div className="method-icon email">
-                  <FaEnvelope />
-                </div>
+                <div className="method-icon email">✉️</div>
                 <div className="method-details">
                   <strong>Email Professionnel</strong>
                   <span className="method-value">centre.tft@gmail.com</span>
                   <small className="method-info">Réponse sous 24h</small>
                 </div>
               </a>
+              
+              <a href="https://wa.me/21673371170" className="contact-method">
+                <div className="method-icon whatsapp">💬</div>
+                <div className="method-details">
+                  <strong>WhatsApp</strong>
+                  <span className="method-value">73 371 170</span>
+                  <small className="method-info">Support rapide</small>
+                </div>
+              </a>
             </div>
           </div>
 
-          {/* Quick Stats */}
+          {/* Avantages Formation */}
           <div className="sidebar-card stats-card">
             <div className="card-header">
               <h3>
-                <FaChartLine className="header-icon" />
-                Informations Clés
+                <span className="header-icon">✨</span>
+                Avantages Formation
               </h3>
             </div>
             
             <div className="stats-grid">
               <div className="stat-item">
-                <div className="stat-icon">🎓</div>
+                <div className="stat-icon">🤖</div>
                 <div className="stat-content">
-                  <div className="stat-value">2 Formations</div>
-                  <div className="stat-label">Débutant & Avancé</div>
+                  <div className="stat-value">IA Pratique</div>
+                  <div className="stat-label">100% orientée métier</div>
                 </div>
               </div>
               
               <div className="stat-item">
-                <div className="stat-icon">
-                  <FaUsers />
-                </div>
+                <div className="stat-icon">📊</div>
                 <div className="stat-content">
-                  <div className="stat-value">12 Max</div>
-                  <div className="stat-label">Participants par session</div>
+                  <div className="stat-value">CSV/Excel</div>
+                  <div className="stat-label">Gestion automatisée</div>
                 </div>
               </div>
               
               <div className="stat-item">
-                <div className="stat-icon">
-                  <FaClock />
-                </div>
+                <div className="stat-icon">👨‍🏫</div>
                 <div className="stat-content">
-                  <div className="stat-value">24h</div>
-                  <div className="stat-label">Durée par formation</div>
+                  <div className="stat-value">Expert</div>
+                  <div className="stat-label">10+ ans expérience</div>
                 </div>
               </div>
               
               <div className="stat-item">
-                <div className="stat-icon">
-                  <FaCalendarAlt />
-                </div>
+                <div className="stat-icon">🔄</div>
                 <div className="stat-content">
-                  <div className="stat-value">Flexible</div>
-                  <div className="stat-label">Dates adaptées à votre agenda</div>
+                  <div className="stat-value">3 mois</div>
+                  <div className="stat-label">Suivi inclus</div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Guarantees */}
+          {/* Garanties */}
           <div className="sidebar-card guarantees-card">
             <div className="card-header">
               <h3>
-                <FaShieldAlt className="header-icon" />
+                <span className="header-icon">✅</span>
                 Nos Garanties
               </h3>
             </div>
             
             <div className="guarantees-list">
               <div className="guarantee-item">
-                <FaCheckCircle className="guarantee-icon" />
+                <span className="guarantee-icon">✓</span>
                 <span>Consultation gratuite pré-formation</span>
               </div>
               <div className="guarantee-item">
-                <FaCheckCircle className="guarantee-icon" />
-                <span>Support pendant 3 mois post-formation</span>
+                <span className="guarantee-icon">✓</span>
+                <span>Certification reconnue Tunisie</span>
               </div>
               <div className="guarantee-item">
-                <FaCheckCircle className="guarantee-icon" />
-                <span>Certification officielle délivrée</span>
+                <span className="guarantee-icon">✓</span>
+                <span>Support 3 mois post-formation</span>
               </div>
               <div className="guarantee-item">
-                <FaCheckCircle className="guarantee-icon" />
-                <span>Garantie satisfaction ou remboursement</span>
+                <span className="guarantee-icon">✓</span>
+                <span>Focus gestion données CSV/Excel</span>
+              </div>
+              <div className="guarantee-item">
+                <span className="guarantee-icon">✓</span>
+                <span>Conforme législation tunisienne</span>
               </div>
             </div>
           </div>
 
-          {/* Urgency Notice */}
+          {/* Processus Inscription */}
+          <div className="sidebar-card process-card">
+            <div className="card-header">
+              <h3>
+                <span className="header-icon">📝</span>
+                Processus Inscription
+              </h3>
+            </div>
+            
+            <div className="process-steps">
+              <div className="process-step">
+                <div className="step-number">1</div>
+                <div className="step-content">
+                  <strong>Contact initial</strong>
+                  <p>Analyse de vos besoins</p>
+                </div>
+              </div>
+              <div className="process-step">
+                <div className="step-number">2</div>
+                <div className="step-content">
+                  <strong>Audit gratuit</strong>
+                  <p>Évaluation personnalisée</p>
+                </div>
+              </div>
+              <div className="process-step">
+                <div className="step-number">3</div>
+                <div className="step-content">
+                  <strong>Programme adapté</strong>
+                  <p>Planning personnalisé</p>
+                </div>
+              </div>
+              <div className="process-step">
+                <div className="step-number">4</div>
+                <div className="step-content">
+                  <strong>Démarrage</strong>
+                  <p>Formation et certification</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Avis Clients */}
+          <div className="sidebar-card testimonials-card">
+            <div className="card-header">
+              <h3>
+                <span className="header-icon">💬</span>
+                Avis Participants
+              </h3>
+            </div>
+            
+            <div className="testimonials">
+              <div className="testimonial">
+                <p>"Formation excellente ! J'ai automatisé le traitement de mes fichiers Excel en 2 jours."</p>
+                <div className="testimonial-author">
+                  <strong>Karim B.</strong>
+                  <span>PME Tunisienne</span>
+                </div>
+              </div>
+              
+              <div className="testimonial">
+                <p>"Le module gestion des données CSV m'a fait gagner 15h par semaine !"</p>
+                <div className="testimonial-author">
+                  <strong>Sarah M.</strong>
+                  <span>Startup Tech</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Urgence */}
           <div className="urgency-notice">
             <div className="urgency-icon">🚨</div>
             <div className="urgency-content">
               <h4>Places Limitées</h4>
-              <p>Maximum 12 participants par session pour garantir un accompagnement personnalisé</p>
+              <p>Maximum 12 participants par session pour un accompagnement optimal</p>
             </div>
           </div>
         </div>
 
-        {/* Main Form */}
+        {/* Formulaire Principal */}
         <div className="contact-form-container">
           {submitSuccess && (
             <div className="success-message">
-              <div className="success-icon">✓</div>
+              <div className="success-icon">✅</div>
               <div className="success-content">
                 <h4>Demande envoyée avec succès !</h4>
-                <p>Nous vous recontacterons dans les 24 heures pour planifier votre consultation.</p>
+                <p>Notre équipe vous recontactera dans les 24 heures pour planifier votre consultation gratuite.</p>
               </div>
             </div>
           )}
@@ -251,17 +332,17 @@ const Contact = () => {
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-header">
               <h2>
-                <FaPaperPlane />
-                Demande d'Inscription
+                <span className="form-header-icon">📋</span>
+                Formulaire d'Inscription
               </h2>
-              <p>Remplissez ce formulaire et nous vous recontacterons rapidement</p>
+              <p>Remplissez ce formulaire pour bénéficier d'une consultation gratuite</p>
             </div>
 
-            {/* Personal Information */}
+            {/* Informations Personnelles */}
             <div className="form-section">
               <div className="section-header">
                 <h3>
-                  <FaUser className="section-icon" />
+                  <span className="section-icon">👤</span>
                   Informations Personnelles
                 </h3>
               </div>
@@ -269,7 +350,7 @@ const Contact = () => {
               <div className="form-grid">
                 <div className="form-group">
                   <label htmlFor="name" className="form-label">
-                    <FaUser className="label-icon" />
+                    <span className="label-icon">👤</span>
                     Nom Complet *
                   </label>
                   <input
@@ -286,7 +367,7 @@ const Contact = () => {
 
                 <div className="form-group">
                   <label htmlFor="email" className="form-label">
-                    <FaEnvelope className="label-icon" />
+                    <span className="label-icon">✉️</span>
                     Email Professionnel *
                   </label>
                   <input
@@ -303,8 +384,8 @@ const Contact = () => {
 
                 <div className="form-group">
                   <label htmlFor="phone" className="form-label">
-                    <FaPhone className="label-icon" />
-                    Téléphone
+                    <span className="label-icon">📱</span>
+                    Téléphone *
                   </label>
                   <input
                     type="tel"
@@ -312,6 +393,7 @@ const Contact = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
+                    required
                     className="form-input"
                     placeholder="73 371 170"
                   />
@@ -319,7 +401,7 @@ const Contact = () => {
 
                 <div className="form-group">
                   <label htmlFor="company" className="form-label">
-                    <FaBuilding className="label-icon" />
+                    <span className="label-icon">🏢</span>
                     Entreprise / Organisation *
                   </label>
                   <input
@@ -336,8 +418,8 @@ const Contact = () => {
 
                 <div className="form-group">
                   <label htmlFor="position" className="form-label">
-                    <FaUser className="label-icon" />
-                    Poste / Fonction
+                    <span className="label-icon">💼</span>
+                    Poste / Fonction *
                   </label>
                   <input
                     type="text"
@@ -345,6 +427,7 @@ const Contact = () => {
                     name="position"
                     value={formData.position}
                     onChange={handleChange}
+                    required
                     className="form-input"
                     placeholder="Ex: Directeur, Chef de projet, Consultant..."
                   />
@@ -352,10 +435,14 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Formation Details */}
+            {/* Détails Formation */}
             <div className="form-section">
               <div className="section-header">
-                <h3>📚 Détails de la Formation</h3>
+                <h3>
+                  <span className="section-icon">🎓</span>
+                  Détails de la Formation
+                </h3>
+                <p>Sélectionnez la formation adaptée à vos besoins</p>
               </div>
 
               <div className="form-group">
@@ -370,7 +457,7 @@ const Contact = () => {
                   required
                   className="form-select"
                 >
-                  <option value="">Sélectionnez une option</option>
+                  <option value="">Sélectionnez une formation</option>
                   {formationOptions.map(option => (
                     <option key={option.value} value={option.value}>
                       {option.label}
@@ -382,13 +469,14 @@ const Contact = () => {
               <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="participants" className="form-label">
-                    Nombre de participants
+                    Nombre de participants *
                   </label>
                   <select
                     id="participants"
                     name="participants"
                     value={formData.participants}
                     onChange={handleChange}
+                    required
                     className="form-select"
                   >
                     {participantOptions.map(option => (
@@ -401,13 +489,14 @@ const Contact = () => {
 
                 <div className="form-group">
                   <label htmlFor="urgency" className="form-label">
-                    Urgence de démarrage
+                    Urgence de démarrage *
                   </label>
                   <select
                     id="urgency"
                     name="urgency"
                     value={formData.urgency}
                     onChange={handleChange}
+                    required
                     className="form-select"
                   >
                     {urgencyOptions.map(option => (
@@ -420,10 +509,13 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Message */}
+            {/* Besoins Spécifiques */}
             <div className="form-section">
               <div className="section-header">
-                <h3>💬 Votre Besoin Spécifique</h3>
+                <h3>
+                  <span className="section-icon">💭</span>
+                  Vos Besoins Spécifiques
+                </h3>
                 <p>Décrivez ce que vous souhaitez automatiser ou améliorer</p>
               </div>
 
@@ -439,19 +531,68 @@ const Contact = () => {
                   required
                   className="form-textarea"
                   rows="6"
-                  placeholder="Ex: Nous souhaitons automatiser notre service client, réduire le temps de traitement des emails, analyser automatiquement nos données commerciales..."
+                  placeholder="Ex: 
+• Nous traitons manuellement des fichiers CSV de 10,000 lignes
+• Nous souhaitons automatiser notre reporting Excel
+• Besoin de synchroniser nos données avec notre CRM
+• Automatisation des emails clients basée sur des données Excel
+• Analyse automatique de nos données commerciales..."
                 />
+              </div>
+
+              <div className="data-type-selector">
+                <h4>Types de données à automatiser :</h4>
+                <div className="data-options">
+                  <label className="data-option">
+                    <input type="checkbox" name="data-csv" />
+                    <span className="checkmark"></span>
+                    <span>Fichiers CSV</span>
+                  </label>
+                  <label className="data-option">
+                    <input type="checkbox" name="data-excel" />
+                    <span className="checkmark"></span>
+                    <span>Fichiers Excel</span>
+                  </label>
+                  <label className="data-option">
+                    <input type="checkbox" name="data-db" />
+                    <span className="checkmark"></span>
+                    <span>Bases de données</span>
+                  </label>
+                  <label className="data-option">
+                    <input type="checkbox" name="data-api" />
+                    <span className="checkmark"></span>
+                    <span>API externes</span>
+                  </label>
+                  <label className="data-option">
+                    <input type="checkbox" name="data-crm" />
+                    <span className="checkmark"></span>
+                    <span>CRM / ERP</span>
+                  </label>
+                  <label className="data-option">
+                    <input type="checkbox" name="data-autres" />
+                    <span className="checkmark"></span>
+                    <span>Autres formats</span>
+                  </label>
+                </div>
               </div>
             </div>
 
-            {/* Submit Section */}
+            {/* Soumission */}
             <div className="form-submit-section">
+              <div className="compliance-notice">
+                <span className="compliance-icon">🇹🇳</span>
+                <div className="compliance-content">
+                  <h4>Formation conforme aux normes tunisiennes</h4>
+                  <p>Certification reconnue, respect du RGPD et des lois locales sur la formation professionnelle</p>
+                </div>
+              </div>
+
               <div className="privacy-notice">
-                <FaShieldAlt className="privacy-icon" />
+                <span className="privacy-icon">🔒</span>
                 <p>
                   Vos informations sont sécurisées et ne seront jamais partagées. 
                   En soumettant ce formulaire, vous acceptez d'être contacté concernant 
-                  nos formations en IA.
+                  nos formations en IA et la gestion automatisée des données.
                 </p>
               </div>
 
@@ -467,14 +608,14 @@ const Contact = () => {
                   </>
                 ) : (
                   <>
-                    <FaPaperPlane className="btn-icon" />
+                    <span className="btn-icon">🚀</span>
                     Envoyer ma demande d'inscription
                   </>
                 )}
               </button>
 
-              <div className="response-time">
-                <FaClock className="response-icon" />
+              <div className="response-guarantee">
+                <span className="response-icon">⏱️</span>
                 <span>Réponse garantie dans les 24 heures ouvrables</span>
               </div>
             </div>
