@@ -155,7 +155,7 @@ const CenterInfo = () => {
                     <h4>Hanen Missaoui</h4>
                     <p className="director-title">Directrice de L'Essor Formation</p>
                     <div className="director-expertise">
-                      <span>🎯 15+ ans d'expérience</span>
+                    
                       <span>📚 Expert en pédagogie</span>
                       <span>🚀 Innovation continue</span>
                     </div>

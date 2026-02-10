@@ -1,4 +1,4 @@
-/* Hero.css */
+/* Hero.css - Version améliorée pour gestion du texte */
 
 :root {
   --royal-blue: #1E40AF;
@@ -25,9 +25,11 @@
   --radius-xl: 1.5rem;
 }
 
-/* Reset box-sizing */
+/* Reset box-sizing et corrections globales */
 *, *::before, *::after {
   box-sizing: border-box;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .hero {
@@ -39,6 +41,7 @@
   align-items: center;
   position: relative;
   overflow-x: hidden;
+  overflow-wrap: break-word;
 }
 
 .hero::before {
@@ -60,6 +63,7 @@
   gap: 4rem;
   position: relative;
   z-index: 2;
+  overflow-wrap: break-word;
 }
 
 @media (max-width: 1024px) {
@@ -82,12 +86,14 @@
   flex-direction: column;
   gap: 2rem;
   width: 100%;
+  overflow-wrap: break-word;
 }
 
 .hero-header {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  overflow-wrap: break-word;
 }
 
 .header-badge {
@@ -103,7 +109,10 @@
   letter-spacing: 0.05em;
   box-shadow: var(--shadow-md);
   width: fit-content;
-  white-space: nowrap;
+  max-width: 100%;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .header-sub-badge {
@@ -120,7 +129,10 @@
   font-weight: 500;
   border: 1px solid rgba(255, 255, 255, 0.2);
   width: fit-content;
-  white-space: nowrap;
+  max-width: 100%;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .hero-title {
@@ -129,8 +141,9 @@
   line-height: 1.1;
   margin: 0;
   color: white;
-  word-wrap: break-word;
+  word-break: break-word;
   overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .highlight-text {
@@ -140,6 +153,7 @@
   -webkit-text-fill-color: transparent;
   color: transparent;
   display: inline;
+  word-break: break-word;
 }
 
 .hero-trainer {
@@ -147,18 +161,22 @@
   color: #E0F2FE;
   margin: 0;
   line-height: 1.4;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .trainer-name {
   font-weight: 700;
   color: white;
   display: inline;
+  word-break: break-word;
 }
 
 .trainer-title {
   color: #93C5FD;
   font-size: clamp(0.875rem, 1.5vw, 1rem);
   display: inline;
+  word-break: break-word;
 }
 
 .hero-subtitle {
@@ -167,7 +185,9 @@
   color: #E0F2FE;
   margin: 0;
   line-height: 1.4;
-  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .subtitle-tag {
@@ -176,6 +196,7 @@
   color: #93C5FD;
   margin-top: 0.5rem;
   font-weight: 500;
+  word-break: break-word;
 }
 
 /* Description */
@@ -184,6 +205,7 @@
   flex-direction: column;
   gap: 1.5rem;
   width: 100%;
+  overflow-wrap: break-word;
 }
 
 .description-main {
@@ -191,7 +213,9 @@
   color: #E0F2FE;
   line-height: 1.6;
   margin: 0;
-  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .description-features {
@@ -208,6 +232,7 @@
   color: #E0F2FE;
   font-size: clamp(0.875rem, 1.5vw, 0.9375rem);
   width: 100%;
+  word-break: break-word;
 }
 
 .feature-icon {
@@ -220,8 +245,9 @@
 
 .feature-item span {
   flex: 1;
-  word-wrap: break-word;
+  word-break: break-word;
   overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .location-badge {
@@ -237,6 +263,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   width: 100%;
+  word-break: break-word;
 }
 
 .location-badge:hover {
@@ -253,7 +280,8 @@
 
 .location-details {
   flex: 1;
-  min-width: 0; /* Important pour le text-overflow */
+  min-width: 0;
+  word-break: break-word;
 }
 
 .location-details strong {
@@ -262,7 +290,8 @@
   color: white;
   margin-bottom: 0.25rem;
   white-space: normal;
-  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .location-details small {
@@ -270,7 +299,8 @@
   font-size: 0.75rem;
   color: #93C5FD;
   white-space: normal;
-  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 /* Stats */
@@ -296,7 +326,8 @@
   border-radius: var(--radius-md);
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
-  min-width: 0; /* Important pour le contenu */
+  min-width: 0;
+  word-break: break-word;
 }
 
 .stat-item:hover {
@@ -322,7 +353,8 @@
 
 .stat-content {
   flex: 1;
-  min-width: 0; /* Permet au texte de se casser correctement */
+  min-width: 0;
+  word-break: break-word;
 }
 
 .stat-number {
@@ -331,6 +363,7 @@
   color: white;
   margin-bottom: 0.125rem;
   word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .stat-label {
@@ -339,6 +372,7 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 /* Actions */
@@ -368,6 +402,8 @@
   text-align: center;
   white-space: nowrap;
   width: 100%;
+  word-break: keep-all;
+  overflow-wrap: normal;
 }
 
 @media (min-width: 768px) {
@@ -441,6 +477,7 @@
   align-items: center;
   gap: 1rem;
   width: 100%;
+  word-break: break-word;
 }
 
 .contact-icon {
@@ -452,7 +489,8 @@
 
 .contact-details {
   flex: 1;
-  min-width: 0; /* Important pour le text-overflow */
+  min-width: 0;
+  word-break: break-word;
 }
 
 .contact-details strong {
@@ -462,6 +500,8 @@
   margin-bottom: 0.25rem;
   font-weight: 600;
   white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .contact-details span {
@@ -469,7 +509,8 @@
   font-size: 0.875rem;
   color: #E0F2FE;
   white-space: normal;
-  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .contact-numbers {
@@ -477,6 +518,7 @@
   align-items: center;
   gap: 0.5rem;
   flex-wrap: wrap;
+  word-break: keep-all;
 }
 
 .contact-numbers a {
@@ -485,6 +527,7 @@
   font-weight: 600;
   transition: color 0.3s ease;
   white-space: nowrap;
+  word-break: keep-all;
 }
 
 .contact-numbers a:hover {
@@ -501,6 +544,7 @@
   flex-direction: column;
   gap: 2rem;
   width: 100%;
+  overflow-wrap: break-word;
 }
 
 /* Trainer Profile */
@@ -510,6 +554,7 @@
   overflow: hidden;
   box-shadow: var(--shadow-xl);
   width: 100%;
+  word-break: break-word;
 }
 
 .profile-header {
@@ -555,11 +600,13 @@
   font-size: 0.75rem;
   font-weight: 600;
   white-space: nowrap;
+  word-break: keep-all;
 }
 
 .trainer-info {
   flex: 1;
-  min-width: 0; /* Important pour le text-overflow */
+  min-width: 0;
+  word-break: break-word;
 }
 
 .trainer-name {
@@ -567,14 +614,16 @@
   font-weight: 800;
   color: var(--gray-900);
   margin: 0 0 0.25rem 0;
-  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .trainer-title {
   font-size: 1rem;
   color: var(--gray-600);
   margin: 0;
-  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .profile-expertise {
@@ -594,7 +643,8 @@
   background: var(--gray-50);
   border-radius: var(--radius-sm);
   border: 1px solid var(--gray-200);
-  min-width: 0; /* Important pour le contenu */
+  min-width: 0;
+  word-break: break-word;
 }
 
 .expertise-icon {
@@ -606,7 +656,8 @@
   font-size: 0.875rem;
   color: var(--gray-700);
   font-weight: 500;
-  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
   flex: 1;
 }
 
@@ -617,6 +668,7 @@
   padding: 2rem;
   box-shadow: var(--shadow-xl);
   width: 100%;
+  overflow-wrap: break-word;
 }
 
 .section-header {
@@ -630,14 +682,18 @@
   font-weight: 700;
   color: var(--gray-900);
   margin: 0.5rem 0;
-  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .section-header p {
   color: var(--gray-600);
   font-size: 0.9375rem;
   margin: 0;
-  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .section-icon {
@@ -669,6 +725,7 @@
   margin-bottom: 1rem;
   width: 100%;
   text-align: center;
+  word-break: break-word;
 }
 
 .level-icon {
@@ -680,7 +737,9 @@
   font-size: 1.125rem;
   font-weight: 700;
   margin: 0;
-  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .level-items {
@@ -699,7 +758,8 @@
   align-items: flex-start;
   gap: 1rem;
   transition: all 0.3s ease;
-  min-width: 0; /* Important pour le contenu */
+  min-width: 0;
+  word-break: break-word;
 }
 
 .workflow-item:hover {
@@ -721,7 +781,8 @@
 
 .item-content {
   flex: 1;
-  min-width: 0; /* Permet au texte de se casser correctement */
+  min-width: 0;
+  word-break: break-word;
 }
 
 .item-content h5 {
@@ -729,14 +790,18 @@
   font-weight: 700;
   color: var(--gray-900);
   margin: 0 0 0.25rem 0;
-  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .item-content p {
   font-size: 0.75rem;
   color: var(--gray-600);
   margin: 0;
-  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .level-arrow {
@@ -777,6 +842,7 @@
   color: var(--gray-700);
   font-weight: 500;
   white-space: nowrap;
+  word-break: keep-all;
 }
 
 /* Tech Stack */
@@ -786,6 +852,7 @@
   padding: 2rem;
   box-shadow: var(--shadow-xl);
   width: 100%;
+  overflow-wrap: break-word;
 }
 
 .tech-stack .section-header {
@@ -797,7 +864,8 @@
   font-weight: 700;
   color: var(--gray-900);
   margin: 0;
-  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .tech-grid {
@@ -821,7 +889,8 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin: 0;
-  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .tech-tags {
@@ -840,6 +909,7 @@
   border: 1px solid var(--gray-200);
   transition: all 0.3s ease;
   white-space: nowrap;
+  word-break: keep-all;
 }
 
 .tech-tag:hover {
@@ -865,35 +935,32 @@
   animation: fadeInUp 0.6s ease-out;
 }
 
-/* Utility classes pour le débordement de texte */
-.text-overflow-ellipsis {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+/* Améliorations spécifiques pour les très longs mots */
+.word-wrap-normal {
+  word-wrap: normal;
 }
 
-.text-wrap-balance {
-  text-wrap: balance;
+.hyphens-auto {
+  hyphens: auto;
 }
 
-.text-wrap-pretty {
-  text-wrap: pretty;
+.hyphens-none {
+  hyphens: none;
 }
 
-/* Pour forcer les mots à rester dans leurs conteneurs */
-.word-break-normal {
-  word-break: normal;
-}
-
-.word-break-break-word {
-  word-break: break-word;
-}
-
-.overflow-wrap-break-word {
+/* Correction pour les conteneurs flex */
+.flex-fix {
+  min-width: 0;
   overflow-wrap: break-word;
 }
 
-/* Media queries supplémentaires pour les petits écrans */
+/* Pour les éléments qui doivent conserver leur mot en entier */
+.keep-word {
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+
+/* Media queries supplémentaires pour les très petits écrans */
 @media (max-width: 640px) {
   .hero-title {
     font-size: 1.75rem;
@@ -923,15 +990,71 @@
     font-size: 0.75rem;
     padding: 0.375rem 0.75rem;
   }
+  
+  .level-items {
+    grid-template-columns: 1fr;
+  }
+  
+  .workflow-legend {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
 }
 
-/* Correction spécifique pour les conteneurs flex */
-.flex-item-fix {
-  min-width: 0;
+/* Pour les écrans très étroits (mobile portrait) */
+@media (max-width: 360px) {
+  .hero-title {
+    font-size: 1.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.9375rem;
+  }
+  
+  .btn-primary,
+  .btn-secondary,
+  .btn-outline {
+    padding: 0.875rem 1rem;
+    font-size: 0.875rem;
+  }
+  
+  .stat-number {
+    font-size: 1.125rem;
+  }
+  
+  .stat-label {
+    font-size: 0.6875rem;
+  }
 }
 
-/* Correction pour les éléments avec position: absolute */
-.absolute-text-fix {
-  white-space: normal;
-  max-width: 100%;
+/* Correction pour les mots très longs spécifiques */
+.break-anywhere {
+  overflow-wrap: anywhere;
+  word-break: break-all;
+}
+
+/* Amélioration pour les titres avec des mots composés */
+.title-fix {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Pour les conteneurs avec text-align: center */
+.text-center-fix {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Amélioration générale pour tous les éléments de texte */
+.hero * {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Style spécifique pour préserver les URLs et les codes */
+.preserve-content {
+  word-break: break-all;
+  overflow-wrap: break-word;
 }

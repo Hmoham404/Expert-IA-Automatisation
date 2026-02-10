@@ -75,7 +75,7 @@ const Hero = () => {
           {/* Subtitle */}
           <h2 className="hero-subtitle">
             Transformez vos processus métier avec des solutions IA concrètes
-            <span className="subtitle-tag">Formation intensive • 2-3 jours • Résultats garantis</span>
+            <span className="subtitle-tag">Formation intensive • 3 jours • Résultats garantis</span>
           </h2>
           
           {/* Description */}
@@ -122,7 +122,7 @@ const Hero = () => {
                 <FaCalendarAlt className="stat-icon" />
               </div>
               <div className="stat-content">
-                <div className="stat-number">2-3 Jours</div>
+                <div className="stat-number">3 Jours</div>
                 <div className="stat-label">Formation intensive</div>
               </div>
             </div>

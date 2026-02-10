@@ -13,57 +13,64 @@ const WorkflowIAFormation = () => {
     formations: [
       {
         id: 1,
-        niveau: "ESSENTIEL",
+        niveau: "PROGRAMME COMPLET",
         icon: "🚀",
-        titre: "Workflow IA Automation - Formation Essentielle",
-        sousTitre: "Apprenez à automatiser vos processus métier en 3 jours intensifs",
+        titre: "Formation IA & Automatisation - 3 Jours Intensifs",
+        sousTitre: "Parcours complet : Développeur IA → Agents → Workflows",
         duree: "3 jours intensifs (24 heures)",
         couleur: "#2563EB",
         badgeColor: "#1D4ED8",
-        resultat: "Maîtriser les fondamentaux de l'automatisation IA et créer vos premiers workflows opérationnels",
+        resultat: "Maîtriser tout le cycle de développement IA et créer des workflows professionnels",
         
-        // Programme 3 jours
+        // Programme 3 jours unique
         programme: [
           {
             jour: 1,
-            titre: "Jour 1 : Fondamentaux & Premiers Workflows",
+            titre: "Jour 1 : Développeur IA - Applications & Travail",
+            sousTitre: "Fondamentaux de l'IA appliquée au travail",
             horaire: "9h00 - 18h00 (avec pause déjeuner)",
             themes: [
-              "Introduction aux workflows IA",
-              "Découverte des outils no-code",
-              "Création du premier automate",
-              "Exercices pratiques sur cas réels"
+              "Introduction aux modèles IA modernes",
+              "Prompt engineering pour le travail quotidien",
+              "Développement d'assistants IA spécialisés",
+              "Applications pratiques en contexte professionnel",
+              "Fin de journée : Application & Prompt Engineering"
             ]
           },
           {
             jour: 2,
-            titre: "Jour 2 : Automatisations Avancées",
+            titre: "Jour 2 : Agents IA & Applications Industrielles",
+            sousTitre: "Création d'agents autonomes pour l'industrie",
             horaire: "9h00 - 18h00 (avec pause déjeuner)",
             themes: [
-              "Automatisation multi-plateformes",
-              "Intégration API de base",
-              "Gestion des erreurs et logs",
-              "Cas client : automatisation complète"
+              "Architecture des agents IA avancés",
+              "Création d'agents multi-tâches",
+              "Applications industrielles de l'IA",
+              "Intégration avec systèmes existants",
+              "Déploiement d'agents en production"
             ]
           },
           {
             jour: 3,
-            titre: "Jour 3 : Industrialisation & Certification",
+            titre: "Jour 3 : Workflows IA & Automatisation",
+            sousTitre: "Création de workflows professionnels complets",
             horaire: "9h00 - 18h00 (avec pause déjeuner)",
             themes: [
+              "Design de workflows IA industriels",
+              "Automatisation end-to-end de processus",
+              "Intégration cross-plateformes",
               "Optimisation des performances",
-              "Documentation des workflows",
-              "Projet final supervisé",
-              "Préparation certification"
+              "Création et déploiement de workflows"
             ]
           }
         ],
 
         objectifs: [
-          "Créer des workflows IA fonctionnels en 3 jours",
-          "Maîtriser les outils d'automatisation essentiels",
-          "Automatiser des processus métier concrets",
-          "Obtenir la certification officielle"
+          "Devenir développeur IA compétent en 3 jours",
+          "Créer des agents IA autonomes pour l'industrie",
+          "Développer des workflows professionnels complets",
+          "Maîtriser l'automatisation intelligente",
+          "Obtenir la certification Expert IA"
         ],
 
         prerequis: [
@@ -75,116 +82,28 @@ const WorkflowIAFormation = () => {
 
         resultats: [
           {
-            icon: "🤖",
-            titre: "Workflows opérationnels",
-            description: "3 workflows IA prêts à l'emploi"
+            icon: "🧠",
+            titre: "Développeur IA",
+            description: "Expert en prompts et applications IA"
           },
           {
-            icon: "📋",
-            titre: "Certification",
-            description: "Certificat de compétences validé"
+            icon: "🤖",
+            titre: "Agents Autonomes",
+            description: "Création d'agents IA industriels"
           },
           {
             icon: "⚡",
-            titre: "Productivité",
-            description: "Gain de temps garanti dès J+1"
+            titre: "Workflows Professionnels",
+            description: "Automatisation de processus complexes"
           },
           {
             icon: "🎯",
-            titre: "Expertise",
-            description: "Compétences immédiatement applicables"
+            titre: "Certification",
+            description: "Certificat Expert IA validé"
           }
         ],
 
-        outils: ["Make", "Zapier", "Airtable", "ChatGPT", "Google Sheets"]
-      },
-
-      {
-        id: 2,
-        niveau: "EXPERT",
-        icon: "⚡",
-        titre: "Super Agents IA - Formation Expert",
-        sousTitre: "Devenez expert en agents IA autonomes en 3 jours intensifs",
-        duree: "3 jours intensifs (24 heures)",
-        couleur: "#4F46E5",
-        badgeColor: "#4338CA",
-        resultat: "Développer et déployer des Super Agents IA autonomes pour votre entreprise",
-        
-        // Programme 3 jours
-        programme: [
-          {
-            jour: 1,
-            titre: "Jour 1 : Architecture des Super Agents",
-            horaire: "9h00 - 18h00 (avec pause déjeuner)",
-            themes: [
-              "Concepts avancés des agents IA",
-              "Architecture modulaire",
-              "Configuration N8n avancée",
-              "Premier agent fonctionnel"
-            ]
-          },
-          {
-            jour: 2,
-            titre: "Jour 2 : Développement & Intégration",
-            horaire: "9h00 - 18h00 (avec pause déjeuner)",
-            themes: [
-              "Développement d'agents spécialisés",
-              "Intégrations API complexes",
-              "Gestion de la mémoire des agents",
-              "Tests et optimisation"
-            ]
-          },
-          {
-            jour: 3,
-            titre: "Jour 3 : Déploiement & Industrialisation",
-            horaire: "9h00 - 18h00 (avec pause déjeuner)",
-            themes: [
-              "Hébergement et déploiement",
-              "Monitoring et supervision",
-              "Projet final : agent complet",
-              "Certification expert"
-            ]
-          }
-        ],
-
-        objectifs: [
-          "Architecturer des Super Agents IA modulaires",
-          "Maîtriser N8n pour l'orchestration avancée",
-          "Déployer des agents en production",
-          "Obtenir la certification Expert IA"
-        ],
-
-        prerequis: [
-          "Expérience en automatisation (Make/Zapier)",
-          "Connaissances en workflows",
-          "Ordinateur performant",
-          "Notions d'APIs recommandées"
-        ],
-
-        resultats: [
-          {
-            icon: "🏗️",
-            titre: "Architecture maîtrisée",
-            description: "Design d'agents scalables"
-          },
-          {
-            icon: "🔧",
-            titre: "Expertise N8n",
-            description: "Maîtrise complète de la plateforme"
-          },
-          {
-            icon: "☁️",
-            titre: "Déploiement cloud",
-            description: "Agents hébergés et opérationnels"
-          },
-          {
-            icon: "📊",
-            titre: "Projets complexes",
-            description: "Automatisation de processus avancés"
-          }
-        ],
-
-        outils: ["N8n", "LangChain", "Docker", "FastAPI", "OpenAI"]
+        outils: ["OpenAI", "LangChain", "Make", "Zapier", "N8n", "Airtable", "Google Sheets", "FastAPI"]
       }
     ],
 
@@ -192,7 +111,7 @@ const WorkflowIAFormation = () => {
       {
         icon: "⏱️",
         title: "3 jours intensifs",
-        description: "Apprentissage accéléré et résultats immédiats"
+        description: "Parcours complet de débutant à expert"
       },
       {
         icon: "👨‍🏫",
@@ -285,7 +204,7 @@ const WorkflowIAFormation = () => {
         </div>
       </section>
 
-      {/* Formations Section */}
+      {/* Formation Section - Un seul programme */}
       {formationsData.formations.map((formation) => (
         <section key={formation.id} className="formation-section">
           <div className="formation-header">
@@ -335,7 +254,10 @@ const WorkflowIAFormation = () => {
                 >
                   <div className="jour-header" data-formation={formation.id}>
                     <div className="jour-number">J{jour.jour}</div>
-                    <h4 className="jour-title">{jour.titre}</h4>
+                    <div className="jour-titles">
+                      <h4 className="jour-title">{jour.titre}</h4>
+                      <p className="jour-subtitle">{jour.sousTitre}</p>
+                    </div>
                   </div>
                   <div className="jour-content">
                     <div className="jour-horaire">
