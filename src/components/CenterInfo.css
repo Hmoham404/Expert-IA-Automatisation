@@ -1,4 +1,4 @@
-/* CenterInfo.css */
+/* CenterInfo.css - Version finale avec toutes les modifications */
 
 :root {
   --royal-blue: #1E40AF;
@@ -79,7 +79,7 @@
 .center-main-title {
   font-size: 2.5rem;
   font-weight: 800;
-  color: var(--gray-900);
+  color: var(--gray-900); /* Maintenant en couleur normale */
   margin-bottom: 0.5rem;
   line-height: 1.2;
 }
@@ -87,7 +87,7 @@
 .title-sub {
   display: block;
   font-size: 1rem;
-  color: var(--royal-blue);
+  color: var(--gray-700); /* Changé de var(--royal-blue) à var(--gray-700) */
   font-weight: 600;
   margin-top: 0.5rem;
   opacity: 0.8;
@@ -388,6 +388,13 @@
   font-size: 1.5rem;
 }
 
+.location-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 0;
+}
+
 .location-content {
   padding: 1.5rem;
 }
@@ -494,6 +501,13 @@
 .contact-icon {
   color: var(--royal-blue);
   font-size: 1.5rem;
+}
+
+.contact-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 0;
 }
 
 .contact-grid {
@@ -604,6 +618,13 @@
   font-size: 1.5rem;
 }
 
+.facilities-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 0;
+}
+
 .facilities-grid {
   padding: 1.5rem;
   display: grid;
@@ -672,6 +693,13 @@
 .agreement-icon {
   color: var(--royal-blue);
   font-size: 1.5rem;
+}
+
+.agreement-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 0;
 }
 
 .agreement-content {

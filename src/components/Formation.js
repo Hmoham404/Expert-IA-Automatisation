@@ -16,8 +16,8 @@ const WorkflowIAFormation = () => {
         niveau: "PROGRAMME COMPLET",
         icon: "🚀",
         titre: "Formation IA & Automatisation - 3 Jours Intensifs",
-        sousTitre: "Parcours complet : Développeur IA → Agents → Workflows",
-        duree: "3 jours intensifs (24 heures)",
+        sousTitre: "Parcours opérationnel: de la stratégie à l'expertise",
+        duree: "3 jours intensifs (18 heures)",
         couleur: "#2563EB",
         badgeColor: "#1D4ED8",
         resultat: "Maîtriser tout le cycle de développement IA et créer des workflows professionnels",
@@ -26,14 +26,15 @@ const WorkflowIAFormation = () => {
         programme: [
           {
             jour: 1,
-            titre: "Jour 1 : Développeur IA - Applications & Travail",
-            sousTitre: "Fondamentaux de l'IA appliquée au travail",
-            horaire: "9h00 - 18h00 (avec pause déjeuner)",
+            titre: "Jour 1 : Architecte AI Solutions- Applications & Travail",
+            sousTitre: "Fondamentaux de l'IA appliquée au travail + Sécurité des données",
+            horaire: "9h00 - 16h00 (avec pause déjeuner)",
             themes: [
               "Introduction aux modèles IA modernes",
               "Prompt engineering pour le travail quotidien",
               "Développement d'assistants IA spécialisés",
               "Applications pratiques en contexte professionnel",
+              "Sécurité et conformité des données (RGPD)",
               "Fin de journée : Application & Prompt Engineering"
             ]
           },
@@ -41,55 +42,59 @@ const WorkflowIAFormation = () => {
             jour: 2,
             titre: "Jour 2 : Agents IA & Applications Industrielles",
             sousTitre: "Création d'agents autonomes pour l'industrie",
-            horaire: "9h00 - 18h00 (avec pause déjeuner)",
+            horaire: "9h00 - 16h00 (avec pause déjeuner)",
             themes: [
               "Architecture des agents IA avancés",
               "Création d'agents multi-tâches",
               "Applications industrielles de l'IA",
               "Intégration avec systèmes existants",
+              "Sécurité des données industrielles",
               "Déploiement d'agents en production"
             ]
           },
           {
             jour: 3,
-            titre: "Jour 3 : Workflows IA & Automatisation",
-            sousTitre: "Création de workflows professionnels complets",
-            horaire: "9h00 - 18h00 (avec pause déjeuner)",
+            titre: "Jour 3 : Architecte AI Solutions & Workflows",
+            sousTitre: "Conception de solutions IA complètes et sécurisées",
+            horaire: "9h00 - 16h00 (avec pause déjeuner)",
             themes: [
               "Design de workflows IA industriels",
               "Automatisation end-to-end de processus",
-              "Intégration cross-plateformes",
-              "Optimisation des performances",
-              "Création et déploiement de workflows"
+              "Intégration cross-plateformes sécurisée",
+              "Architecture des solutions IA",
+              "Sécurité et gouvernance des données",
+              "Déploiement et maintenance des solutions"
             ]
           }
         ],
 
         objectifs: [
-          "Devenir développeur IA compétent en 3 jours",
+          "Devenir architecte AI Solutions en 3 jours",
           "Créer des agents IA autonomes pour l'industrie",
           "Développer des workflows professionnels complets",
-          "Maîtriser l'automatisation intelligente",
-          "Obtenir la certification Expert IA"
+          "Maîtriser l'automatisation intelligente sécurisée",
+          "Assurer la sécurité et la conformité des données",
+          "Obtenir la certification Architecte AI Solutions"
         ],
 
         prerequis: [
           "Ordinateur portable avec connexion internet",
           "Connaissance basique de l'informatique",
           "Aucune expérience en programmation requise",
-          "Motivation pour apprendre rapidement"
+          "Motivation pour apprendre rapidement",
+          "Sensibilité aux enjeux de sécurité des données"
         ],
 
         resultats: [
           {
-            icon: "🧠",
-            titre: "Développeur IA",
-            description: "Expert en prompts et applications IA"
+            icon: "🏗️",
+            titre: "Architecte AI Solutions",
+            description: "Expert en conception de solutions IA sécurisées"
           },
           {
             icon: "🤖",
             titre: "Agents Autonomes",
-            description: "Création d'agents IA industriels"
+            description: "Création d'agents IA industriels sécurisés"
           },
           {
             icon: "⚡",
@@ -97,13 +102,18 @@ const WorkflowIAFormation = () => {
             description: "Automatisation de processus complexes"
           },
           {
+            icon: "🔒",
+            titre: "Sécurité Data",
+            description: "Maîtrise des aspects sécurité et conformité"
+          },
+          {
             icon: "🎯",
             titre: "Certification",
-            description: "Certificat Expert IA validé"
+            description: "Certificat Architecte AI Solutions validé"
           }
         ],
 
-        outils: ["OpenAI", "LangChain", "Make", "Zapier", "N8n", "Airtable", "Google Sheets", "FastAPI"]
+        outils: ["OpenAI", "LangChain", "Make", "Zapier", "N8n", "Airtable", "Google Sheets", "FastAPI", "PostgreSQL", "Docker"]
       }
     ],
 
@@ -111,12 +121,12 @@ const WorkflowIAFormation = () => {
       {
         icon: "⏱️",
         title: "3 jours intensifs",
-        description: "Parcours complet de débutant à expert"
+        description: "Parcours opérationnel complet"
       },
       {
         icon: "👨‍🏫",
         title: "Expert senior",
-        description: "Formateur avec 10+ ans d'expérience en IA"
+        description: "Formateur spécialisé en sécurité IA"
       },
       {
         icon: "📈",
@@ -146,7 +156,7 @@ const WorkflowIAFormation = () => {
         {
           number: "03",
           title: "Financement",
-          description: "Solutions CPF, OPCO et entreprise"
+          description: "Rembourcement TFP"
         }
       ]
     },
@@ -154,7 +164,7 @@ const WorkflowIAFormation = () => {
     statistiques: {
       satisfaction: "98%",
       certification: "95%",
-      emploi: "89%"
+      productivite: "89%"
     }
   };
 
@@ -170,7 +180,7 @@ const WorkflowIAFormation = () => {
           
           <div className="hero-stats">
             <div className="stat">
-              <div className="stat-number">24h</div>
+              <div className="stat-number">18h</div>
               <div className="stat-label">sur 3 jours</div>
             </div>
             <div className="stat-divider"></div>
@@ -229,7 +239,7 @@ const WorkflowIAFormation = () => {
               </div>
               <div className="meta-item">
                 <span className="meta-icon">💰</span>
-                <span><strong>Financement:</strong> CPF, OPCO, Entreprise</span>
+                <span><strong>Financement:</strong> Rembourcement TFP</span>
               </div>
               <div className="meta-item">
                 <span className="meta-icon">👥</span>
@@ -242,7 +252,7 @@ const WorkflowIAFormation = () => {
           <div className="programme-section">
             <div className="section-subheader">
               <h3>📅 Programme détaillé - 3 jours intensifs</h3>
-              <p>Un parcours progressif conçu pour des résultats immédiats</p>
+              <p>Un parcours opérationnel conçu pour des résultats immédiats</p>
             </div>
             
             <div className="programme-jours">
@@ -378,12 +388,12 @@ const WorkflowIAFormation = () => {
       <section className="cta-section">
         <div className="cta-content">
           <div className="cta-badge">🚀 PROCHAINES SESSIONS</div>
-          <h2>Prêt à maîtriser l'IA en 3 jours ?</h2>
+          <h2>Prêt à devenir Architecte AI Solutions en 3 jours ?</h2>
           <p>Sessions limitées à 8 participants pour un accompagnement optimal</p>
           
           <div className="cta-stats">
             <div className="cta-stat">
-              <div className="cta-stat-number">{formationsData.statistiques.emploi}</div>
+              <div className="cta-stat-number">{formationsData.statistiques.productivite}</div>
               <div className="cta-stat-label">d'augmentation de productivité</div>
             </div>
           </div>
@@ -401,7 +411,7 @@ const WorkflowIAFormation = () => {
 
           <div className="cta-note">
             <span className="note-icon">💡</span>
-            <span>Financement CPF et OPCO 100% pris en charge pour les éligibles</span>
+            <span> Rembourcement TFP</span>
           </div>
         </div>
       </section>

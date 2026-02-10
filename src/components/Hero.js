@@ -18,7 +18,8 @@ import {
   FaGraduationCap,
   FaBuilding,
   FaPhone,
-  FaWhatsapp
+  FaWhatsapp,
+  FaExchangeAlt // Nouvelle icône pour le changement
 } from 'react-icons/fa';
 import './Hero.css';
 
@@ -44,6 +45,14 @@ const Hero = () => {
     window.location.href = '/#center';
   };
 
+  const handleCallFirstNumber = () => {
+    window.location.href = 'tel:73371170';
+  };
+
+  const handleCallSecondNumber = () => {
+    window.location.href = 'tel:55691152';
+  };
+
   return (
     <section id="home" className="hero">
       <div className="hero-container">
@@ -55,21 +64,22 @@ const Hero = () => {
               <FaRocket /> FORMATION EXPERT
             </div>
             <div className="header-sub-badge">
-              <FaGraduationCap /> L'Essor Formation • Agréé N° 51-496-19
+              <FaGraduationCap /> L'Essor pour la Formation • Agréé N° 51-496-19
             </div>
           </div>
 
           {/* Main Title */}
-          <h1 className="hero-title">
-            Formez-vous à l'
-            <span className="highlight-text">Intelligence Artificielle</span>
-            & à l'
-            <span className="highlight-text">Automatisation No-Code</span>
-          </h1>
+         <h1 className="hero-title">
+  Formez-vous à l&apos;
+  <span className="highlight-text">Intelligence Artificielle</span>
+  {" "}et l&apos;
+  <span className="highlight-text">Automatisation No-Code</span>
+</h1>
+
           
           <p className="hero-trainer">
             Formation dispensée par <span className="trainer-name">Mohamed Lakhal</span>
-            <span className="trainer-title"> • Expert Certifié IA & Automatisation</span>
+            <span className="trainer-title"> • Expert Certifié IA et Automatisation</span>
           </p>
           
           {/* Subtitle */}
@@ -109,13 +119,13 @@ const Hero = () => {
             <div className="location-badge" onClick={handleContactCenter}>
               <FaBuilding className="location-icon" />
               <div className="location-details">
-                <strong>📍 L'Essor Formation - Hammam Sousse</strong>
+                <strong>📍 L'Essor pour la Formation - Hammam Sousse</strong>
                 <small>Centre agréé par l'État • Infrastructures modernes</small>
               </div>
             </div>
           </div>
 
-          {/* Stats Section */}
+          {/* Stats Section - CORRIGÉ POUR "CERTIFIÉ" */}
           <div className="hero-stats">
             <div className="stat-item">
               <div className="stat-icon-container">
@@ -123,7 +133,7 @@ const Hero = () => {
               </div>
               <div className="stat-content">
                 <div className="stat-number">3 Jours</div>
-                <div className="stat-label">Formation intensive</div>
+                <div className="stat-label">FORMATION INTENSIVE</div>
               </div>
             </div>
             
@@ -132,8 +142,8 @@ const Hero = () => {
                 <FaUsers className="stat-icon" />
               </div>
               <div className="stat-content">
-                <div className="stat-number">12 max</div>
-                <div className="stat-label">Participants par session</div>
+                <div className="stat-number">8 max</div>
+                <div className="stat-label">PARTICIPANTS PAR SESSION</div>
               </div>
             </div>
             
@@ -142,8 +152,8 @@ const Hero = () => {
                 <FaCertificate className="stat-icon" />
               </div>
               <div className="stat-content">
-                <div className="stat-number">Certifiée</div>
-                <div className="stat-label">Attestation reconnue</div>
+                <div className="stat-number certified-text">Certifié</div>
+                <div className="stat-label">ATTESTATION RECONNUE</div>
               </div>
             </div>
             
@@ -153,7 +163,7 @@ const Hero = () => {
               </div>
               <div className="stat-content">
                 <div className="stat-number">98%</div>
-                <div className="stat-label">Satisfaction</div>
+                <div className="stat-label">SATISFACTION</div>
               </div>
             </div>
           </div>
@@ -187,24 +197,45 @@ const Hero = () => {
             </button>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact Info - NUMÉROS EN NOIR avec ligne de changement */}
           <div className="hero-contact-info">
             <div className="contact-item">
               <FaPhone className="contact-icon" />
               <div className="contact-details">
-                <strong>Contact direct</strong>
+                <strong>Contact direct - Appelez maintenant</strong>
                 <div className="contact-numbers">
-                  <a href="tel:73371170">73 371 170</a>
+                  <a 
+                    href="tel:73371170" 
+                    title="Appeler le 73 371 170"
+                    onClick={handleCallFirstNumber}
+                    className="phone-number"
+                  >
+                    73 371 170
+                  </a>
                   <span className="separator">|</span>
-                  <a href="tel:55691152">55 691 152</a>
+                  <a 
+                    href="tel:23513870" 
+                    title="Appeler le 23 513 870"
+                    onClick={handleCallSecondNumber}
+                    className="phone-number"
+                  >
+                    23 513 870
+                  </a>
+                </div>
+                
+                {/* Ligne de changement de contact */}
+                <div className="contact-change-line">
+                  <FaExchangeAlt className="contact-change-icon" />
+                  <span>Contact direct avec notre équipe - Réponse immédiate</span>
                 </div>
               </div>
             </div>
+            
             <div className="contact-item">
               <FaBuilding className="contact-icon" />
               <div className="contact-details">
-                <strong>Centre de formation</strong>
-                <span>L'Essor Formation • Agrément N° 51-496-19</span>
+                <strong>Centre de formation agréé</strong>
+                <span>L'Essor pour la Formation • Agrément N° 51-496-19 • Hammam Sousse</span>
               </div>
             </div>
           </div>
@@ -222,7 +253,10 @@ const Hero = () => {
                 </div>
                 <div className="trainer-info">
                   <h3 className="trainer-name">Mohamed Lakhal</h3>
-                  <p className="trainer-title">Expert IA & Automatisation No-Code</p>
+                  <div className="trainer-title-container">
+                    <p className="trainer-title-main">Expert IA et Automatisation</p>
+                    <p className="trainer-title-sub">No-Code</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -265,7 +299,7 @@ const Hero = () => {
                       <FaDatabase />
                     </div>
                     <div className="item-content">
-                      <h5>CRM & Bases de données</h5>
+                      <h5>CRM et Bases de données</h5>
                       <p>HubSpot, Salesforce, Airtable</p>
                     </div>
                   </div>

@@ -1,3 +1,4 @@
+// CenterInfo.jsx - Version finale complète
 import React from 'react';
 import { 
   FaMapMarkerAlt, 
@@ -6,16 +7,12 @@ import {
   FaBuilding, 
   FaCertificate, 
   FaWifi, 
-  FaCar, 
-  FaAccessibleIcon, 
   FaGraduationCap,
-  FaChalkboardTeacher,
-  FaBook,
-  FaCoffee,
-  FaUsers,
+  FaLaptop,
   FaCalendarAlt,
   FaCheckCircle,
-  FaStar
+  FaStar,
+  FaCoffee
 } from 'react-icons/fa';
 import './CenterInfo.css';
 
@@ -23,48 +20,46 @@ const CenterInfo = () => {
   const logoPath = process.env.PUBLIC_URL + '/images/logo-essor-formation.png';
   const logoFallback = process.env.PUBLIC_URL + '/images/logo-essor.svg';
 
+  // Installations - SEULEMENT 3
   const facilities = [
-    { icon: <FaWifi />, title: "WiFi Haut Débit", description: "Connexion fibre optique" },
-    { icon: "💻", title: "Salles Informatiques", description: "PCs dernière génération" },
-    { icon: <FaCar />, title: "Parking", description: "Placement sécurisé gratuit" },
-    { icon: <FaAccessibleIcon />, title: "Accessibilité", description: "PMR adapté" },
-    { icon: <FaBook />, title: "Ressources", description: "Bibliothèque spécialisée" },
-    { icon: <FaCoffee />, title: "Espace Détente", description: "Cafétéria & repos" },
-    { icon: <FaChalkboardTeacher />, title: "Amphithéâtre", description: "Salle de conférence" },
-    { icon: <FaUsers />, title: "Salles de travail", description: "Espaces collaboratifs" }
+    { icon: <FaWifi />, title: "WiFi Haut Débit", description: "Connexion internet rapide et stable" },
+    { icon: <FaLaptop />, title: "Salle Informatique", description: "Équipements neufs et performants" },
+    { icon: <FaCoffee />, title: "Espace Détente", description: "Zone de pause et cafétéria" }
   ];
 
   const contactMethods = [
     { 
       type: "Téléphone Principal", 
       value: "73 371 170", 
-      schedule: "Lun-Ven: 8h-18h | Sam: 8h-13h",
+      schedule: "Lun-Ven: 8h-18h",
       icon: <FaPhone />,
       href: "tel:73371170"
     },
     { 
       type: "Téléphone Secondaire", 
-      value: "55 691 152", 
+      value: "23 513 870", 
       schedule: "Contact alternatif",
       icon: <FaPhone />,
-      href: "tel:55691152"
+      href: "tel:23513870"
     },
     { 
       type: "Type de Centre", 
-      value: "Formation Initiale & Continue", 
-      schedule: "Agréé par l'État",
-      icon: "🏢"
+      value: "Formation Professionnelle", 
+      schedule: "Établissement privé",
+      icon: "🏢",
+      nonClickable: true
     },
     { 
       type: "Prochaine Session", 
-      value: "À définir", 
-      schedule: "12 places maximum",
-      icon: <FaCalendarAlt />
+      value: "Sur demande", 
+      schedule: "Inscriptions ouvertes",
+      icon: <FaCalendarAlt />,
+      nonClickable: true
     }
   ];
 
   const agreementFeatures = [
-    "Formation qualité ISO",
+    "Formation qualité",
     "Certifications reconnues",
     "Financement possible",
     "Suivi personnalisé",
@@ -81,13 +76,13 @@ const CenterInfo = () => {
             <FaStar /> CENTRE AGRÉÉ PAR L'ÉTAT
           </div>
           <h1 className="center-main-title">
-            L'Essor Formation
+            L'Essor pour la Formation
             <span className="title-sub">Centre d'Excellence Professionnelle</span>
           </h1>
           <p className="center-intro">
-            Centre de formation initiale et continue agréé par l'État tunisien, 
-            spécialisé dans les formations professionnelles de haute qualité avec 
-            une approche pédagogique innovante.
+            Centre de formation privé agréé par l'État tunisien, 
+            spécialisé dans les formations professionnelles de qualité 
+            avec une approche pédagogique adaptée au marché du travail.
           </p>
         </div>
 
@@ -116,7 +111,7 @@ const CenterInfo = () => {
                     <FaGraduationCap className="fallback-icon" />
                     <div className="fallback-text">
                       <span className="fallback-title">L'ESSOR</span>
-                      <span className="fallback-subtitle">FORMATION</span>
+                      <span className="fallback-subtitle">POUR LA FORMATION</span>
                     </div>
                   </div>
                 </div>
@@ -129,8 +124,8 @@ const CenterInfo = () => {
                     </div>
                   </div>
                   <div className="identity-tags">
-                    <span className="identity-tag">🏛️ Établissement Public</span>
-                    <span className="identity-tag">🎓 Formation Certifiante</span>
+                    <span className="identity-tag">🏢 Établissement Privé</span>
+                    <span className="identity-tag">🎓 Formation Professionnelle</span>
                     <span className="identity-tag">⭐ Excellence Pédagogique</span>
                   </div>
                 </div>
@@ -149,60 +144,52 @@ const CenterInfo = () => {
                     <div className="avatar-circle">
                       <span className="avatar-initials">HM</span>
                     </div>
-                    <div className="director-badge">👑 Directrice</div>
+                    <div className="director-badge">👑 Propriétaire</div>
                   </div>
                   <div className="director-details">
                     <h4>Hanen Missaoui</h4>
-                    <p className="director-title">Directrice de L'Essor Formation</p>
+                    <p className="director-title">Directrice de centre</p>
                     <div className="director-expertise">
-                    
-                      <span>📚 Expert en pédagogie</span>
-                      <span>🚀 Innovation continue</span>
+                      <span>🎓 Experte en Pédagogie</span>
+                      <span>🚀 Innovation Continue</span>
+                      <span>💼 Relations Entreprises</span>
                     </div>
                     <blockquote className="director-quote">
-                      "Notre engagement est de fournir des formations d'excellence 
-                      qui transforment les compétences et accélèrent les carrières 
-                      professionnelles."
+                      "Mon engagement est d'offrir une formation d'excellence qui 
+                      transforme les compétences et accélère les carrières professionnelles."
                     </blockquote>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Location Section */}
+            {/* Location Section - Simplifiée */}
             <div className="location-card">
               <div className="location-header">
                 <FaMapMarkerAlt className="location-icon" />
-                <h3>Localisation & Accès</h3>
+                <h3>Localisation</h3>
               </div>
               <div className="location-content">
                 <div className="address-box">
                   <div className="address-icon">📍</div>
                   <div className="address-details">
                     <h4>Hammam-Sousse, Tunisie</h4>
-                    <p>Centre situé dans une zone stratégique facile d'accès</p>
+                    <p>Centre facilement accessible</p>
                   </div>
                 </div>
                 <div className="access-features">
                   <div className="access-item">
+                    <div className="access-icon">📍</div>
+                    <div className="access-details">
+                      <strong>Emplacement</strong>
+                      <span>Zone facile d'accès</span>
+                    </div>
+                  </div>
+                  <div className="access-item">
                     <div className="access-icon">🚗</div>
                     <div className="access-details">
                       <strong>Accès Voiture</strong>
-                      <span>Parking gratuit sécurisé</span>
-                    </div>
-                  </div>
-                  <div className="access-item">
-                    <div className="access-icon">🚍</div>
-                    <div className="access-details">
-                      <strong>Transports</strong>
-                      <span>Arrêts de bus à proximité</span>
-                    </div>
-                  </div>
-                  <div className="access-item">
-                    <div className="access-icon">🏢</div>
-                    <div className="access-details">
-                      <strong>Infrastructure</strong>
-                      <span>Bâtiment moderne et équipé</span>
+                      <span>Route principale</span>
                     </div>
                   </div>
                 </div>
@@ -223,8 +210,8 @@ const CenterInfo = () => {
                   <a 
                     key={index} 
                     href={method.href || '#'} 
-                    className={`contact-method ${!method.href ? 'non-clickable' : ''}`}
-                    onClick={!method.href ? (e) => e.preventDefault() : null}
+                    className={`contact-method ${method.nonClickable ? 'non-clickable' : ''}`}
+                    onClick={method.nonClickable ? (e) => e.preventDefault() : null}
                   >
                     <div className="method-icon-wrapper">
                       {method.icon}
@@ -239,17 +226,16 @@ const CenterInfo = () => {
               </div>
               <div className="contact-footer">
                 <p className="contact-notice">
-                  💡 <strong>Conseil :</strong> Pour une réponse rapide, privilégiez 
-                  les appels téléphoniques en heures ouvrables.
+                  💡 Pour une réponse rapide, contactez-nous par téléphone en heures ouvrables.
                 </p>
               </div>
             </div>
 
-            {/* Facilities Section */}
+            {/* Facilities Section - SEULEMENT 3 installations */}
             <div className="facilities-card">
               <div className="facilities-header">
                 <FaBuilding className="facilities-icon" />
-                <h3>Infrastructures & Équipements</h3>
+                <h3>Équipements & Installations</h3>
               </div>
               <div className="facilities-grid">
                 {facilities.map((facility, index) => (
@@ -275,12 +261,12 @@ const CenterInfo = () => {
               <div className="agreement-content">
                 <div className="agreement-badge-main">
                   <div className="badge-content">
-                    <span className="badge-label">Agrément</span>
+                    <span className="badge-label">Agrément Officiel</span>
                     <span className="badge-number-main">N° 51-496-19</span>
                   </div>
                 </div>
                 <p className="agreement-description">
-                  Centre de formation agréé par l'État tunisien, garantissant 
+                  Centre de formation privé agréé par l'État tunisien, garantissant 
                   des formations de qualité, des certifications reconnues et 
                   l'éligibilité aux dispositifs de financement publics.
                 </p>
@@ -297,28 +283,7 @@ const CenterInfo = () => {
           </div>
         </div>
 
-        {/* Bottom Stats */}
-        <div className="center-stats">
-          <div className="stat-item">
-            <div className="stat-number">15+</div>
-            <div className="stat-label">Années d'expérience</div>
-          </div>
-          <div className="stat-divider"></div>
-          <div className="stat-item">
-            <div className="stat-number">1000+</div>
-            <div className="stat-label">Apprenants formés</div>
-          </div>
-          <div className="stat-divider"></div>
-          <div className="stat-item">
-            <div className="stat-number">50+</div>
-            <div className="stat-label">Formations disponibles</div>
-          </div>
-          <div className="stat-divider"></div>
-          <div className="stat-item">
-            <div className="stat-number">98%</div>
-            <div className="stat-label">Satisfaction</div>
-          </div>
-        </div>
+       
       </div>
     </section>
   );

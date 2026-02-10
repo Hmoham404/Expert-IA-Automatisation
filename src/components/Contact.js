@@ -154,7 +154,7 @@ const Contact = () => {
                 <div className="method-icon whatsapp">💬</div>
                 <div className="method-details">
                   <strong>WhatsApp</strong>
-                  <span className="method-value">73 371 170</span>
+                  <span className="method-value">23 513 870</span>
                   <small className="method-info">Support rapide</small>
                 </div>
               </a>

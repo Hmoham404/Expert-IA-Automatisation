@@ -30,13 +30,13 @@ const IAAdvantages = () => {
     {
       id: 1,
       icon: <FaClock />,
-      title: "Gain de temps radical",
-      description: "Automatisez jusqu'à 48% de vos tâches répétitives",
+      title: "Gain de temps significatif",
+      description: "Automatisez jusqu'à 40% de vos tâches répétitives",
       color: "#3B82F6",
       gradient: "linear-gradient(135deg, #3B82F6, #60A5FA)",
       stats: {
-        percentage: "48%",
-        label: "Temps gagné"
+        percentage: "40%",
+        label: "Tâches automatisées"
       },
       keyPoints: [
         {
@@ -55,43 +55,43 @@ const IAAdvantages = () => {
           icon: "🔗"
         }
       ],
-      outcome: "Jusqu'à 48% de temps gagné sur les tâches répétitives"
+      outcome: "Jusqu'à 15 heures gagnées par semaine sur les tâches répétitives"
     },
     {
       id: 2,
       icon: <FaMoneyBillWave />,
-      title: "ROI immédiat et mesurable",
-      description: "Retour sur investissement dès le premier mois",
+      title: "Retour sur investissement rapide",
+      description: "ROI observable dès les 2-3 premiers mois",
       color: "#10B981",
       gradient: "linear-gradient(135deg, #10B981, #34D399)",
       stats: {
-        percentage: "1 mois",
-        label: "ROI"
+        percentage: "2-3 mois",
+        label: "Retour sur investissement"
       },
       keyPoints: [
         {
-          title: "Optimisation logicielle",
-          description: "Moins d'outils, plus d'efficacité",
-          icon: "🛠️"
+          title: "Réduction des coûts opérationnels",
+          description: "Optimisation des ressources et des outils",
+          icon: "💰"
         },
         {
           title: "Valorisation du capital humain",
-          description: "Les équipes se concentrent sur les tâches à forte valeur",
+          description: "Les équipes se concentrent sur les tâches à forte valeur ajoutée",
           icon: "👥"
         },
         {
-          title: "Agents IA contrôlés",
-          description: "Fiables et vérifiables",
+          title: "Agents IA contrôlés et efficaces",
+          description: "Fiables, vérifiables et rentables",
           icon: "✅"
         }
       ],
-      outcome: "Retour sur investissement dès le premier mois"
+      outcome: "Retour sur investissement observable dès les 2-3 premiers mois d'exploitation"
     },
     {
       id: 3,
       icon: <FaPuzzlePiece />,
-      title: "Innovation accessible à tous",
-      description: "L'IA devient simple, utilisable et maîtrisée",
+      title: "Innovation accessible",
+      description: "L'IA devient opérationnelle sans compétences techniques",
       color: "#8B5CF6",
       gradient: "linear-gradient(135deg, #8B5CF6, #A78BFA)",
       stats: {
@@ -115,13 +115,13 @@ const IAAdvantages = () => {
           icon: "👨‍🏫"
         }
       ],
-      outcome: "L'IA devient simple, utilisable et maîtrisée"
+      outcome: "L'IA devient opérationnelle et maîtrisée par tous les collaborateurs"
     },
     {
       id: 4,
       icon: <FaChartBar />,
-      title: "Décision éclairée et stratégique",
-      description: "Des décisions rapides, fiables et justifiées",
+      title: "Décision éclairée",
+      description: "Des décisions rapides basées sur des données fiables",
       color: "#F59E0B",
       gradient: "linear-gradient(135deg, #F59E0B, #FBBF24)",
       stats: {
@@ -145,37 +145,37 @@ const IAAdvantages = () => {
           icon: "📈"
         }
       ],
-      outcome: "Des décisions rapides, fiables et justifiées"
+      outcome: "Des décisions plus rapides et mieux informées grâce aux données"
     },
     {
       id: 5,
       icon: <FaTrophy />,
-      title: "Avantage concurrentiel durable",
-      description: "L'entreprise prend une longueur d'avance sur son marché",
+      title: "Avantage concurrentiel",
+      description: "L'entreprise gagne en compétitivité sur son marché",
       color: "#EF4444",
       gradient: "linear-gradient(135deg, #EF4444, #F87171)",
       stats: {
-        percentage: "Leader",
-        label: "Position"
+        percentage: "+35%",
+        label: "Compétitivité"
       },
       keyPoints: [
         {
           title: "Barrière technologique",
-          description: "Difficile à copier",
+          description: "Difficile à copier par les concurrents",
           icon: "🛡️"
         },
         {
-          title: "Expérience client auto-responsive",
-          description: "Réponses rapides, personnalisées, 24/7",
+          title: "Expérience client améliorée",
+          description: "Réponses rapides et personnalisées",
           icon: "⚡"
         },
         {
           title: "Culture de l'agilité",
-          description: "Et de l'innovation continue",
+          description: "Adaptation rapide aux changements",
           icon: "🚀"
         }
       ],
-      outcome: "L'entreprise prend une longueur d'avance sur son marché"
+      outcome: "Positionnement renforcé face à la concurrence grâce à l'IA"
     }
   ];
 
@@ -187,10 +187,10 @@ const IAAdvantages = () => {
   ];
 
   const impactStats = [
-    { value: "48%", label: "Temps gagné", description: "Sur tâches répétitives", icon: <FaClock /> },
-    { value: "1 mois", label: "ROI", description: "Dès le premier mois", icon: <FaMoneyBillWave /> },
+    { value: "40%", label: "Tâches automatisées", description: "Tâches répétitives", icon: <FaClock /> },
+    { value: "2-3 mois", label: "ROI observable", description: "Retour sur investissement", icon: <FaMoneyBillWave /> },
     { value: "100%", label: "Autonomie", description: "Participants opérationnels", icon: <FaUsers /> },
-    { value: "3x", label: "Productivité", description: "Augmentée en moyenne", icon: <FaChartLine /> }
+    { value: "2.5x", label: "Productivité", description: "Augmentation moyenne", icon: <FaChartLine /> }
   ];
 
   const handleWhatsAppClick = (messageType = 'default') => {

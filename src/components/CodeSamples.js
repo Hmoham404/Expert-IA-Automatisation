@@ -9,140 +9,145 @@ import {
   FaCheckCircle,
   FaClock,
   FaRocket,
-  FaTools,
   FaChartLine,
-  FaLightbulb,
   FaCogs,
-  FaServer,
-  FaDatabase,
   FaSync,
-  FaEnvelope,
   FaUsers,
-  FaFileExcel
+  FaFileExcel,
+  FaGraduationCap,
+  FaLaptop,
+  FaBook,
+  FaUserGraduate,
+  FaCertificate,
+  FaHandsHelping,
+  FaProjectDiagram,
+  FaBrain,
+  FaCode,
+  FaNetworkWired
 } from 'react-icons/fa';
 import './CodeSamples.css';
 
 const CodeSamples = () => {
-  const [activeTab, setActiveTab] = useState('email-agent');
+  const [activeTab, setActiveTab] = useState('excel-ia');
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null);
 
   const solutions = {
-    'email-agent': {
-      title: "Agent IA pour Gestion d'Emails",
-      icon: <FaEnvelope />,
-      subtitle: "Automatisez vos communications et répondez instantanément",
-      duration: "Setup: 2 heures",
-      color: "#2563EB",
+    'excel-ia': {
+      title: "Excel & IA : Automatisation Avancée",
+      icon: <FaFileExcel />,
+      subtitle: "Maîtrisez Excel avec l'IA pour automatiser vos tâches quotidiennes",
+      duration: "Formation: 20 heures",
+      color: "#059669",
       hasVideo: true,
-      videoFile: "v1.mp4",
+      videoFile: "excel-ia-demo.mp4",
       
       process: [
-        "Configuration de l'agent IA dans n8n",
-        "Connexion sécurisée à votre compte email",
-        "Définition des règles de traitement intelligentes",
-        "Test en environnement contrôlé",
-        "Déploiement et monitoring continu"
+        "Découverte des outils d'automatisation Excel",
+        "Maîtrise des fonctions avancées (Power Query, Power Pivot)",
+        "Intégration d'IA avec Excel via Python/API",
+        "Automatisation de rapports et dashboards",
+        "Projet final : Système automatisé de reporting"
       ],
       
       benefits: [
-        { icon: <FaClock />, text: "Traitement 24/7 sans interruption" },
-        { icon: <FaSync />, text: "Réponses personnalisées et contextuelles" },
-        { icon: <FaChartBar />, text: "Tri intelligent par priorité" },
-        { icon: <FaUsers />, text: "Gain de 15h/semaine par équipe" }
+        { icon: <FaClock />, text: "Gain de temps quotidien significatif" },
+        { icon: <FaCogs />, text: "Automatisation de tâches répétitives" },
+        { icon: <FaChartLine />, text: "Analyses de données optimisées" },
+        { icon: <FaBrain />, text: "Intégration IA dans vos workflows" }
       ],
       
       technologies: [
-        { name: "n8n", category: "Automation" },
-        { name: "OpenAI GPT-4", category: "AI" },
-        { name: "Gmail API", category: "Integration" },
-        { name: "JavaScript", category: "Development" },
-        { name: "Webhooks", category: "Real-time" }
+        { name: "Excel Avancé", category: "Outil" },
+        { name: "Power Query", category: "Transformation" },
+        { name: "Power Pivot", category: "Analyse" },
+        { name: "Python", category: "IA" },
+        { name: "API REST", category: "Intégration" }
       ],
       
       roi: [
-        { value: "48%", label: "Temps email réduit" },
-        { value: "24/7", label: "Disponibilité" },
-        { value: "1h/jour", label: "Gain par employé" },
-        { value: "98%", label: "Précision" }
+        { value: "70%", label: "Temps de traitement réduit" },
+        { value: "100%", label: "Automatisation des rapports" },
+        { value: "3x", label: "Productivité augmentée" },
+        { value: "Expert", label: "Niveau atteint" }
       ]
     },
     
     'crm-automation': {
-      title: "Automatisation CRM Intelligente",
+      title: "Automatisation CRM & Marketing",
       icon: <FaRobot />,
-      subtitle: "Qualifiez et convertissez vos leads automatiquement",
-      duration: "Configuration: 1 heure",
+      subtitle: "Automatisez vos processus commerciaux et marketing",
+      duration: "Formation: 25 heures",
       color: "#7C3AED",
       hasVideo: false,
       
       process: [
-        "Capture automatique des leads multi-canaux",
-        "Analyse et scoring IA en temps réel",
-        "Intégration CRM native (HubSpot, Salesforce)",
-        "Notifications intelligentes aux commerciaux",
-        "Suivi et optimisation automatisés"
+        "Audit de vos processus actuels",
+        "Configuration des outils no-code",
+        "Automatisation des workflows marketing",
+        "Intégration multi-plateformes",
+        "Analyse et optimisation continue"
       ],
       
       benefits: [
-        { icon: <FaRocket />, text: "Réponse immédiate (< 5 min)" },
-        { icon: <FaChartLine />, text: "Conversion augmentée de 35%" },
-        { icon: <FaCogs />, text: "Élimination automatique des doublons" },
-        { icon: <FaLightbulb />, text: "ROI mesurable dès J+30" }
+        { icon: <FaRocket />, text: "Processus 100% automatisés" },
+        { icon: <FaUsers />, text: "Expérience client améliorée" },
+        { icon: <FaSync />, text: "Synchronisation temps réel" },
+        { icon: <FaChartBar />, text: "ROI marketing mesurable" }
       ],
       
       technologies: [
         { name: "Make.com", category: "Automation" },
-        { name: "Zapier", category: "Integration" },
-        { name: "HubSpot API", category: "CRM" },
-        { name: "ChatGPT", category: "AI" },
-        { name: "Slack", category: "Communication" }
+        { name: "HubSpot", category: "CRM" },
+        { name: "Zapier", category: "Intégration" },
+        { name: "Google Sheets", category: "Données" },
+        { name: "Slack/Discord", category: "Communication" }
       ],
       
       roi: [
-        { value: "5 min", label: "Temps de réponse" },
+        { value: "40%", label: "Temps commercial gagné" },
         { value: "35%", label: "Conversion augmentée" },
-        { value: "3x", label: "Productivité" },
+        { value: "24/7", label: "Opérationnel" },
         { value: "90%", label: "Erreurs réduites" }
       ]
     },
     
-    'data-analysis': {
-      title: "Plateforme d'Analyse IA",
-      icon: <FaChartBar />,
-      subtitle: "Transformez vos données en insights actionnables",
-      duration: "Setup: 45 minutes",
-      color: "#059669",
+    'web-development': {
+      title: "Développement Web Moderne",
+      icon: <FaCode />,
+      subtitle: "Apprenez à créer des sites web et applications performantes",
+      duration: "Formation: 40 heures",
+      color: "#2563EB",
       hasVideo: false,
       
       process: [
-        "Import automatique de données multi-sources",
-        "Nettoyage et préparation IA avancée",
-        "Analyse prédictive et détection d'anomalies",
-        "Visualisation interactive et dashboards",
-        "Génération automatique de rapports"
+        "Fondamentaux du HTML/CSS/JavaScript",
+        "Frameworks modernes (React, Vue.js)",
+        "Backend avec Node.js et bases de données",
+        "Déploiement et hébergement",
+        "Projet réel de A à Z"
       ],
       
       benefits: [
-        { icon: <FaDatabase />, text: "Analyse de données en secondes" },
-        { icon: <FaChartLine />, text: "Détection automatique des tendances" },
-        { icon: <FaServer />, text: "Prédictions avec 99% de précision" },
-        { icon: <FaLightbulb />, text: "Décisions data-driven optimisées" }
+        { icon: <FaLaptop />, text: "Création de sites web complets" },
+        { icon: <FaNetworkWired />, text: "Développement full-stack" },
+        { icon: <FaProjectDiagram />, text: "Gestion de projets réels" },
+        { icon: <FaCertificate />, text: "Certification reconnue" }
       ],
       
       technologies: [
-        { name: "Python", category: "Development" },
-        { name: "OpenAI API", category: "AI" },
-        { name: "Google Sheets", category: "Data" },
-        { name: "Tableau", category: "Visualization" },
-        { name: "Power BI", category: "Analytics" }
+        { name: "HTML5/CSS3", category: "Frontend" },
+        { name: "JavaScript ES6+", category: "Langage" },
+        { name: "React.js", category: "Framework" },
+        { name: "Node.js", category: "Backend" },
+        { name: "MongoDB", category: "Base de données" }
       ],
       
       roi: [
-        { value: "95%", label: "Temps analyse réduit" },
-        { value: "30%", label: "Décisions améliorées" },
-        { value: "99%", label: "Précision prédictions" },
-        { value: "2x", label: "ROI en 6 mois" }
+        { value: "100%", label: "Sites web créés" },
+        { value: "Pro", label: "Niveau développeur" },
+        { value: "Portfolio", label: "Projets concrets" },
+        { value: "Emploi", label: "Opportunités créées" }
       ]
     }
   };
@@ -183,15 +188,15 @@ const CodeSamples = () => {
       {/* Header Section */}
       <div className="solutions-header">
         <div className="header-badge">
-          <FaVideo /> DÉMONSTRATIONS INTERACTIVES
+          <FaGraduationCap /> DÉMONSTRATIONS DE FORMATIONS
         </div>
         <h1 className="solutions-title">
-          Solutions IA Clé en Main
-          <span className="title-sub">Pour votre entreprise</span>
+          Formations Professionnelles
+          <span className="title-sub">Prêtes à Déployer</span>
         </h1>
         <p className="solutions-intro">
-          Découvrez nos solutions d'automatisation IA prêtes à déployer, 
-          conçues pour booster votre productivité dès aujourd'hui.
+          Découvrez nos formations pratiques et concrètes, conçues pour 
+          vous donner des compétences immédiatement applicables en entreprise.
         </p>
       </div>
 
@@ -210,9 +215,9 @@ const CodeSamples = () => {
               {solutions[tab].icon}
             </span>
             <span className="tab-label">
-              {tab === 'email-agent' && 'Agent Email IA'}
+              {tab === 'excel-ia' && 'Excel & IA'}
               {tab === 'crm-automation' && 'CRM Automatisé'}
-              {tab === 'data-analysis' && 'Analyse Données'}
+              {tab === 'web-development' && 'Développement Web'}
             </span>
             {activeTab === tab && (
               <span className="active-indicator" style={{ backgroundColor: solutions[tab].color }}></span>
@@ -238,12 +243,12 @@ const CodeSamples = () => {
                   <span>{currentSolution.duration}</span>
                 </div>
                 <div className="meta-tag">
-                  <FaCheckCircle />
-                  <span>Solution Complète</span>
+                  <FaUserGraduate />
+                  <span>Formation Pratique</span>
                 </div>
                 <div className="meta-tag">
-                  <FaRocket />
-                  <span>Déploiement Rapide</span>
+                  <FaCertificate />
+                  <span>Certification Incluse</span>
                 </div>
               </div>
             </div>
@@ -288,44 +293,44 @@ const CodeSamples = () => {
                 <div className="video-info">
                   <div className="video-title">
                     <FaVideo />
-                    <span>Démonstration Complète</span>
+                    <span>Démonstration de Formation</span>
                   </div>
                   <div className="video-description">
-                    Tutoriel pas à pas de configuration
+                    Extrait de notre formation Excel & IA
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="video-highlights">
-              <h3>🎯 Points clés de la démonstration</h3>
+              <h3>🎯 Ce que vous apprendrez</h3>
               <div className="highlight-list">
                 <div className="highlight-item">
-                  <div className="highlight-icon">🔧</div>
+                  <div className="highlight-icon">📊</div>
                   <div className="highlight-content">
-                    <h4>Configuration n8n</h4>
-                    <p>Interface intuitive et workflow builder</p>
+                    <h4>Excel Avancé</h4>
+                    <p>Formules complexes, tableaux croisés dynamiques</p>
                   </div>
                 </div>
                 <div className="highlight-item">
                   <div className="highlight-icon">🤖</div>
                   <div className="highlight-content">
-                    <h4>Intégration OpenAI</h4>
-                    <p>Modèles IA avancés pour le traitement</p>
+                    <h4>Intégration IA</h4>
+                    <p>Connecter Excel à des modèles d'intelligence artificielle</p>
                   </div>
                 </div>
                 <div className="highlight-item">
-                  <div className="highlight-icon">🧪</div>
+                  <div className="highlight-icon">⚡</div>
                   <div className="highlight-content">
-                    <h4>Tests réels</h4>
-                    <p>Validation avec données réelles</p>
+                    <h4>Automatisation</h4>
+                    <p>Macros et scripts pour automatiser vos tâches</p>
                   </div>
                 </div>
                 <div className="highlight-item">
-                  <div className="highlight-icon">📊</div>
+                  <div className="highlight-icon">📈</div>
                   <div className="highlight-content">
-                    <h4>Monitoring</h4>
-                    <p>Tableaux de bord de performance</p>
+                    <h4>Reporting</h4>
+                    <p>Création de dashboards interactifs et automatiques</p>
                   </div>
                 </div>
               </div>
@@ -337,34 +342,34 @@ const CodeSamples = () => {
               <div className="presentation-icon" style={{ backgroundColor: `${currentSolution.color}20` }}>
                 {currentSolution.icon}
               </div>
-              <h3>✨ Solution Professionnelle</h3>
+              <h3>✨ Formation Professionnelle</h3>
             </div>
             <p className="presentation-description">
               {activeTab === 'crm-automation' 
-                ? "Notre plateforme combine les meilleurs outils no-code avec l'intelligence artificielle pour automatiser votre processus de vente de A à Z. Sans code, sans complexité, avec des résultats mesurables dès la première semaine."
-                : "Transformez vos données en actif stratégique grâce à notre plateforme d'analyse IA. Obtenez des insights actionnables, des prédictions précises et des visualisations professionnelles sans aucune expertise technique."
+                ? "Maîtrisez l'automatisation de vos processus commerciaux et marketing. Apprenez à connecter vos outils, automatiser les workflows, et analyser les performances pour optimiser votre ROI."
+                : "Devenez développeur web full-stack en maîtrisant les technologies modernes. Créez des applications web complètes, de la conception frontend au backend, avec des projets concrets."
               }
             </p>
             <div className="presentation-features">
               <div className="feature">
-                <div className="feature-icon">🚀</div>
+                <div className="feature-icon">🎯</div>
                 <div className="feature-content">
-                  <h4>Déploiement Rapide</h4>
-                  <p>Opérationnel en quelques heures</p>
+                  <h4>Pratique</h4>
+                  <p>Exercices et projets réels</p>
                 </div>
               </div>
               <div className="feature">
-                <div className="feature-icon">🔒</div>
+                <div className="feature-icon">👨‍🏫</div>
                 <div className="feature-content">
-                  <h4>Sécurité Maximale</h4>
-                  <p>Données protégées et conformes RGPD</p>
+                  <h4>Accompagnement</h4>
+                  <p>Formateurs experts disponibles</p>
                 </div>
               </div>
               <div className="feature">
-                <div className="feature-icon">🔄</div>
+                <div className="feature-icon">📚</div>
                 <div className="feature-content">
-                  <h4>Maintenance Incluse</h4>
-                  <p>Support et mises à jour continues</p>
+                  <h4>Ressources</h4>
+                  <p>Documentation complète fournie</p>
                 </div>
               </div>
             </div>
@@ -378,9 +383,9 @@ const CodeSamples = () => {
             <div className="section-header">
               <h3>
                 <span className="header-icon">📋</span>
-                Processus étape par étape
+                Programme de Formation
               </h3>
-              <p>Un déploiement structuré pour des résultats garantis</p>
+              <p>Un apprentissage structuré pour des résultats garantis</p>
             </div>
             <div className="process-steps">
               {currentSolution.process.map((step, index) => (
@@ -390,7 +395,7 @@ const CodeSamples = () => {
                   </div>
                   <div className="step-content">
                     <h4>{step}</h4>
-                    <p>Validation et test inclus à chaque étape</p>
+                    <p>Exercices pratiques et évaluations</p>
                   </div>
                   {index < currentSolution.process.length - 1 && (
                     <div className="step-connector"></div>
@@ -405,9 +410,9 @@ const CodeSamples = () => {
             <div className="section-header">
               <h3>
                 <span className="header-icon">✅</span>
-                Avantages Concrets
+                Compétences Acquises
               </h3>
-              <p>Des résultats mesurables dès les premières semaines</p>
+              <p>Des compétences immédiatement applicables en entreprise</p>
             </div>
             <div className="benefits-grid">
               {currentSolution.benefits.map((benefit, index) => (
@@ -417,7 +422,7 @@ const CodeSamples = () => {
                   </div>
                   <div className="benefit-content">
                     <h4>{benefit.text}</h4>
-                    <p>Impact direct sur vos indicateurs clés</p>
+                    <p>Application directe dans votre travail</p>
                   </div>
                 </div>
               ))}
@@ -429,10 +434,10 @@ const CodeSamples = () => {
         <div className="technologies-section">
           <div className="section-header">
             <h3>
-              <FaTools className="header-icon" />
-              Technologies Utilisées
+              <FaBook className="header-icon" />
+              Technologies Maîtrisées
             </h3>
-            <p>Stack technique de pointe pour des performances optimales</p>
+            <p>Stack technique complète enseignée pendant la formation</p>
           </div>
           <div className="tech-categories">
             {Object.values(currentSolution.technologies.reduce((acc, tech) => {
@@ -461,9 +466,9 @@ const CodeSamples = () => {
           <div className="section-header">
             <h3>
               <FaChartLine className="header-icon" />
-              Impact & Retour sur Investissement
+              Résultats Attendus
             </h3>
-            <p>Des résultats mesurés sur nos clients actuels</p>
+            <p>Les bénéfices concrets de cette formation</p>
           </div>
           <div className="roi-grid">
             {currentSolution.roi.map((item, index) => (
@@ -473,7 +478,7 @@ const CodeSamples = () => {
                 </div>
                 <div className="roi-label">{item.label}</div>
                 <div className="roi-description">
-                  Amélioration mesurable dès le premier mois
+                  Compétence maîtrisée et applicable
                 </div>
               </div>
             ))}
@@ -485,35 +490,35 @@ const CodeSamples = () => {
       <div className="solution-cta">
         <div className="cta-content">
           <div className="cta-header">
-            <h2>🚀 Prêt à transformer votre entreprise ?</h2>
+            <h2>🚀 Prêt à développer vos compétences ?</h2>
             <p>
-              Nous vous accompagnons de l'audit à l'implémentation, 
-              avec formation, support et garantie de résultats.
+              Nous vous formons aux technologies les plus demandées du marché, 
+              avec un accompagnement personnalisé et des projets concrets.
             </p>
           </div>
           <div className="cta-benefits">
             <div className="cta-benefit">
               <FaCheckCircle className="benefit-icon" />
-              <span>Audit personnalisé gratuit</span>
+              <span>Formation pratique et concrète</span>
             </div>
             <div className="cta-benefit">
               <FaCheckCircle className="benefit-icon" />
-              <span>Démo sur vos données</span>
+              <span>Certification reconnue</span>
             </div>
             <div className="cta-benefit">
               <FaCheckCircle className="benefit-icon" />
-              <span>Garantie satisfaction</span>
+              <span>Support post-formation</span>
             </div>
           </div>
         </div>
         <div className="cta-actions">
           <button className="cta-btn primary-cta">
-            Demander une démonstration personnalisée
+            Demander le programme complet
             <span className="cta-arrow">→</span>
           </button>
           <button className="cta-btn secondary-cta">
-            <FaFileExcel />
-            Télécharger notre documentation
+            <FaHandsHelping />
+            Contactez un conseiller
           </button>
         </div>
       </div>
