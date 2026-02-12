@@ -1,8 +1,5 @@
 import React from 'react';
 import { 
-  FaCalendarAlt, 
-  FaUsers, 
-  FaCertificate, 
   FaArrowRight, 
   FaDownload, 
   FaDatabase, 
@@ -19,7 +16,9 @@ import {
   FaBuilding,
   FaPhone,
   FaWhatsapp,
-  FaExchangeAlt // Nouvelle icône pour le changement
+  FaExchangeAlt,
+  FaStar,
+  FaTh
 } from 'react-icons/fa';
 import './Hero.css';
 
@@ -50,7 +49,7 @@ const Hero = () => {
   };
 
   const handleCallSecondNumber = () => {
-    window.location.href = 'tel:55691152';
+    window.location.href = 'tel:23513870';
   };
 
   return (
@@ -69,13 +68,12 @@ const Hero = () => {
           </div>
 
           {/* Main Title */}
-         <h1 className="hero-title">
-  Formez-vous à l&apos;
-  <span className="highlight-text">Intelligence Artificielle</span>
-  {" "}et l&apos;
-  <span className="highlight-text">Automatisation No-Code</span>
-</h1>
-
+          <h1 className="hero-title">
+            Formez-vous à l&apos;
+            <span className="highlight-text">Intelligence Artificielle</span>
+            {" "}et l&apos;
+            <span className="highlight-text">Automatisation No-Code</span>
+          </h1>
           
           <p className="hero-trainer">
             Formation dispensée par <span className="trainer-name">Mohamed Lakhal</span>
@@ -125,46 +123,41 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Stats Section - CORRIGÉ POUR "CERTIFIÉ" */}
-          <div className="hero-stats">
-            <div className="stat-item">
-              <div className="stat-icon-container">
-                <FaCalendarAlt className="stat-icon" />
-              </div>
-              <div className="stat-content">
-                <div className="stat-number">3 Jours</div>
-                <div className="stat-label">FORMATION INTENSIVE</div>
-              </div>
+          {/* STATS TABLEAU - NOUVEAU DESIGN */}
+          <div className="stats-table-container">
+            <div className="stats-table-header">
+              <FaTh className="stats-table-icon" />
+              <h3>Chiffres clés de la formation</h3>
             </div>
             
-            <div className="stat-item">
-              <div className="stat-icon-container">
-                <FaUsers className="stat-icon" />
-              </div>
-              <div className="stat-content">
-                <div className="stat-number">8 max</div>
-                <div className="stat-label">PARTICIPANTS PAR SESSION</div>
-              </div>
-            </div>
+            <table className="stats-table">
+              <thead>
+                <tr>
+                  <th>Durée</th>
+                  <th>Participants</th>
+                  <th>Certification</th>
+                  <th>Satisfaction</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="stat-value">3 Jours</td>
+                  <td className="stat-value">8 max</td>
+                  <td className="stat-value certified-text">Certifié</td>
+                  <td className="stat-value">98%</td>
+                </tr>
+                <tr>
+                  <td className="stat-label-cell">FORMATION INTENSIVE</td>
+                  <td className="stat-label-cell">PARTICIPANTS PAR SESSION</td>
+                  <td className="stat-label-cell">ATTESTATION RECONNUE</td>
+                  <td className="stat-label-cell">SATISFACTION</td>
+                </tr>
+              </tbody>
+            </table>
             
-            <div className="stat-item">
-              <div className="stat-icon-container">
-                <FaCertificate className="stat-icon" />
-              </div>
-              <div className="stat-content">
-                <div className="stat-number certified-text">Certifié</div>
-                <div className="stat-label">ATTESTATION RECONNUE</div>
-              </div>
-            </div>
-            
-            <div className="stat-item">
-              <div className="stat-icon-container">
-                <FaChartLine className="stat-icon" />
-              </div>
-              <div className="stat-content">
-                <div className="stat-number">98%</div>
-                <div className="stat-label">SATISFACTION</div>
-              </div>
+            <div className="stats-table-footer">
+              <FaStar className="footer-icon" />
+              <span>Formation certifiante • Qualiopi • Éligible CPF</span>
             </div>
           </div>
 
@@ -270,7 +263,6 @@ const Hero = () => {
                 <span className="expertise-icon">⚡</span>
                 <span>No-Code Automation Specialist</span>
               </div>
-             
               <div className="expertise-tag">
                 <span className="expertise-icon">🎯</span>
                 <span>Formateur certifié</span>

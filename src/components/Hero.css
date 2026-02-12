@@ -1,4 +1,4 @@
-/* Hero.css - Version finale avec numéros en noir et ligne de changement */
+/* Hero.css - Version finale avec tableau des statistiques et numéros en noir */
 
 :root {
   --royal-blue: #1E40AF;
@@ -279,82 +279,166 @@ html {
   color: #93C5FD;
 }
 
-/* Stats Section - CORRECTION SPÉCIFIQUE POUR "CERTIFIÉ" */
-.hero-stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 1rem;
+/* ===== STATS TABLEAU - NOUVEAU DESIGN ===== */
+.stats-table-container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   width: 100%;
+  margin: 0.5rem 0 1rem;
+  box-shadow: var(--shadow-lg);
 }
 
-@media (max-width: 480px) {
-  .hero-stats {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-.stat-item {
+.stats-table-header {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 1rem;
-  border-radius: var(--radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-  min-width: 0;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.stat-item:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateY(-2px);
-}
-
-.stat-icon-container {
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-sm);
-  flex-shrink: 0;
-}
-
-.stat-icon {
+.stats-table-icon {
   font-size: 1.5rem;
   color: #93C5FD;
 }
 
-.stat-content {
-  flex: 1;
-  min-width: 0;
-}
-
-.stat-number {
-  font-size: 1.25rem;
-  font-weight: 700;
+.stats-table-header h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
   color: white;
-  margin-bottom: 0.125rem;
-  white-space: nowrap;
-  overflow: visible;
+  margin: 0;
+  letter-spacing: 0.5px;
 }
 
-/* Correction spécifique pour "Certifié" - Évite la césure */
-.certified-text {
+.stats-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.stats-table th {
+  padding: 0.75rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #93C5FD;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.stats-table td {
+  padding: 0.75rem 0.5rem;
+}
+
+.stat-value {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1.2;
+}
+
+.stat-label-cell {
+  font-size: 0.7rem;
+  color: #E0F2FE;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stats-table .certified-text {
   white-space: nowrap !important;
+  font-size: 1.35rem;
   word-break: keep-all !important;
   overflow-wrap: normal !important;
   display: inline-block;
 }
 
-.stat-label {
-  font-size: 0.75rem;
-  color: #93C5FD;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  word-break: break-word;
-  overflow-wrap: break-word;
+.stats-table-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.8rem;
+  color: #E0F2FE;
+}
+
+.footer-icon {
+  color: #FBBF24;
+  font-size: 0.9rem;
+}
+
+/* Responsive pour le tableau */
+@media (max-width: 768px) {
+  .stats-table-container {
+    padding: 1rem;
+  }
+  
+  .stats-table th {
+    font-size: 0.65rem;
+    padding: 0.5rem 0.25rem;
+  }
+  
+  .stat-value {
+    font-size: 1.1rem;
+  }
+  
+  .stats-table .certified-text {
+    font-size: 1.1rem;
+  }
+  
+  .stat-label-cell {
+    font-size: 0.6rem;
+    padding: 0.5rem 0.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-table-container {
+    padding: 0.75rem;
+  }
+  
+  .stats-table-header h3 {
+    font-size: 0.95rem;
+  }
+  
+  .stats-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  .stat-value {
+    font-size: 1rem;
+  }
+  
+  .stats-table .certified-text {
+    font-size: 1rem;
+  }
+  
+  .stat-label-cell {
+    font-size: 0.55rem;
+  }
+  
+  .stats-table-footer {
+    font-size: 0.7rem;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+}
+
+/* Anciens styles hero-stats masqués */
+.hero-stats {
+  display: none;
 }
 
 /* Actions */
@@ -442,7 +526,7 @@ html {
   transform: translateX(4px);
 }
 
-/* Contact Info - NUMÉROS EN NOIR et ligne de changement */
+/* Contact Info - NUMÉROS EN NOIR avec ligne de changement */
 .hero-contact-info {
   display: flex;
   flex-direction: column;
@@ -554,7 +638,7 @@ html {
   width: 100%;
 }
 
-/* Trainer Profile - CORRECTION POUR SÉPARER LE NOM ET TITRE */
+/* Trainer Profile */
 .trainer-profile {
   background: white;
   border-radius: var(--radius-xl);
@@ -653,7 +737,6 @@ html {
   line-height: 1.2;
 }
 
-/* Ajustements responsive pour la séparation */
 @media (max-width: 768px) {
   .trainer-title-main {
     font-size: 0.875rem;
@@ -967,7 +1050,7 @@ html {
   animation: fadeInUp 0.6s ease-out;
 }
 
-/* Améliorations responsive pour éviter les coupures */
+/* RESPONSIVE GLOBAL */
 @media (max-width: 640px) {
   .hero-title {
     font-size: 1.75rem;
@@ -1008,11 +1091,6 @@ html {
     gap: 0.5rem;
   }
   
-  /* Ajustement spécifique pour "Certifié" sur mobile */
-  .stat-number {
-    font-size: 1.1rem;
-  }
-  
   /* Correction des numéros de téléphone sur mobile */
   .contact-numbers {
     flex-direction: column;
@@ -1038,6 +1116,17 @@ html {
   }
 }
 
+@media (max-width: 480px) {
+  .contact-numbers a {
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .contact-change-line {
+    font-size: 0.7rem;
+  }
+}
+
 @media (max-width: 360px) {
   .hero-title {
     font-size: 1.5rem;
@@ -1052,25 +1141,5 @@ html {
   .btn-outline {
     padding: 0.875rem 1rem;
     font-size: 0.875rem;
-  }
-  
-  .stat-number {
-    font-size: 1rem;
-  }
-  
-  .stat-label {
-    font-size: 0.6875rem;
-  }
-}
-
-/* Style pour mobile - version alternative */
-@media (max-width: 480px) {
-  .contact-numbers a {
-    font-size: 1rem;
-    padding: 0.5rem 0.75rem;
-  }
-  
-  .contact-change-line {
-    font-size: 0.7rem;
   }
 }
